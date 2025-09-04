@@ -1,37 +1,48 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-usage() { echo "Usage: $0 [--dev|--release]"; exit 1; }
-MODE="${1:-}"; [[ -z "$MODE" ]] && usage
+usage() {
+  echo "Usage: $0 [--dev|--release|--demo]"
+  exit 1
+}
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SRC="${ROOT_DIR}/private/l10n"
-DST="${ROOT_DIR}/lib/l10n"
+MODE="${1:-}"
+[[ -z "$MODE" ]] && usage
 
-echo "ROOT: ${ROOT_DIR}"
-echo "SRC : ${SRC}"
-echo "DST : ${DST}"
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+DST="$ROOT_DIR/lib/l10n"
 
-[[ -f "${SRC}/app_de.arb" && -f "${SRC}/app_en.arb" ]] || { echo "❌ Missing private ARBs in ${SRC}"; exit 1; }
+case "$MODE" in
+  --dev|--release)
+    SRC="$ROOT_DIR/private/l10n"
+    ;;
+  --demo)
+    SRC="$ROOT_DIR/demo/l10n"
+    ;;
+  *)
+    usage
+    ;;
+esac
 
-mkdir -p "${DST}"
+echo "ROOT: $ROOT_DIR"
+echo "SRC : $SRC"
+echo "DST : $DST"
 
-echo "🧹 Clearing ${DST} ..."
-rm -f "${DST}"/app_*.arb
+[[ -f "$SRC/app_en.arb" && -f "$SRC/app_de.arb" ]] || { echo "❌ Missing ARBs in $SRC"; exit 1; }
 
-echo "🔒 Copying PRIVATE ARBs ..."
-install -m 0644 "${SRC}/app_de.arb" "${DST}/app_de.arb"
-install -m 0644 "${SRC}/app_en.arb" "${DST}/app_en.arb"
+mkdir -p "$DST"
+rm -f "$DST"/app_*.arb || true
 
-echo "🔎 Diff (should be empty):"
-diff -u "${SRC}/app_en.arb" "${DST}/app_en.arb" || true
+echo "Copying ARBs from $SRC ..."
+cp -f "$SRC/app_en.arb" "$DST/app_en.arb"
+cp -f "$SRC/app_de.arb" "$DST/app_de.arb"
 
-echo "⚙️  flutter gen-l10n ..."
-( cd "${ROOT_DIR}" && flutter gen-l10n )
+echo "Running flutter gen-l10n..."
+( cd "$ROOT_DIR" && flutter gen-l10n )
 
-if [[ "${MODE}" == "--release" ]]; then
-  echo "🧹 Cleaning up copied ARBs (release) ..."
-  rm -f "${DST}/app_de.arb" "${DST}/app_en.arb"
+if [ "$MODE" = "--release" ]; then
+  echo "Cleaning up copied ARBs..."
+  rm -f "$DST/app_en.arb" "$DST/app_de.arb"
 fi
 
-echo "✅ Done."
+echo "Done ($MODE)."

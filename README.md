@@ -57,9 +57,12 @@ All UI strings are localized using ARB files.
 To simplify workflows, a `Makefile` is provided:
 
 ```bash
-make dev       # Use private ARBs for local development
-make release   # Use private ARBs, generate l10n, then clean up
-make gen       # Run flutter gen-l10n
+make dev       # Use private ARBs for local development (real texts)
+make release   # Use private ARBs, generate l10n, then clean up (for CI/Deploy)
+make demo      # Use demo ARBs with placeholder texts (safe for public builds)
+make gen       # Run flutter gen-l10n manually
 make build     # Release build for Firebase Hosting
 make riverpod  # Run build_runner for Riverpod/Freezed/Json
 make watch     # Run build_runner in watch mode
+make clean     # Remove generated ARBs and localization output
+

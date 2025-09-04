@@ -1,0 +1,13 @@
+{
+  "@@locale": "de",
+  "app_title": "Demo-Portfolio (Platzhalter)",
+  "@app_title": { "description": "Platzhalter für den Haupttitel der Anwendung." },
+  "nav_home": "Start (Demo)",
+  "@nav_home": { "description": "Navigationspunkt für die Startseite (Demo)." },
+  "nav_portfolio": "Portfolio (Demo)",
+  "@nav_portfolio": { "description": "Navigationspunkt für die Portfolio-Seite (Demo)." },
+  "nav_imprint": "Impressum (Demo)",
+  "@nav_imprint": { "description": "Navigationspunkt für die Impressum-Seite (Demo)." },
+  "nav_privacy": "Datenschutz (Demo)",
+  "@nav_privacy": { "description": "Navigationspunkt für die Datenschutz-Seite (Demo)." }
+}

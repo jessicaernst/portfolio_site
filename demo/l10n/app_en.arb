@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "app_title": "Demo Portfolio (Placeholder)",
+  "@app_title": { "description": "Placeholder for main application title." },
+  "nav_home": "Home (demo)",
+  "@nav_home": { "description": "Navigation item for the home page (demo)." },
+  "nav_portfolio": "Portfolio (demo)",
+  "@nav_portfolio": { "description": "Navigation item for the portfolio page (demo)." },
+  "nav_imprint": "Imprint (demo)",
+  "@nav_imprint": { "description": "Navigation item for the imprint page (demo)." },
+  "nav_privacy": "Privacy (demo)",
+  "@nav_privacy": { "description": "Navigation item for the privacy page (demo)." }
+}
