@@ -59,3 +59,10 @@ web/index.generated.html
 # --- SYMBOLS / MAPS ---
 app.*.symbols
 app.*.map.json
+
+# --- PRIVATE CONFIGS ---
+private/
+
+# l10n: never commit real ARBs or generated code
+lib/l10n/app_*.arb
+lib/l10n/gen/
