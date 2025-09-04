@@ -6,6 +6,9 @@
 #   make build    -> build web with release localizations
 #   make riverpod -> run build_runner for Riverpod/Freezed/Json
 
+SHELL := /bin/bash
+.PHONY: dev release gen build riverpod watch
+
 dev:
 	./tool/prepare_localizations.sh --dev
 
