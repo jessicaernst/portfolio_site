@@ -6,10 +6,6 @@ import 'package:portfolio_site/core/theme/app_theme.dart';
 import 'package:portfolio_site/features/home/home_page.dart';
 import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 
-void main() {
-  runApp(const ProviderScope(child: PortfolioApp()));
-}
-
 class PortfolioApp extends ConsumerWidget {
   const PortfolioApp({super.key});
 
