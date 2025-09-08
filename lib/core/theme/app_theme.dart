@@ -37,7 +37,7 @@ class AppTheme {
         onSurface: textBlack,
       ),
 
-      // Typography
+      // Typography - Using Google Fonts with GDPR compliance (no auto-download)
       textTheme: GoogleFonts.poppinsTextTheme().copyWith(
         // Hero Title
         displayLarge: GoogleFonts.poppins(
