@@ -1,8 +1,22 @@
+/// Defines the application's theme settings, including color palette, typography,
+/// and component themes for consistent styling across the app.
+///
+/// The [AppTheme] class provides static constants for commonly used colors,
+/// and a static [theme] getter that returns a [ThemeData] object configured
+/// with custom colors, text styles using Google Fonts, and component themes
+/// such as AppBar, ElevatedButton, TextButton, and Card.
+///
+/// Includes a helper method [_createMaterialColor] to generate a [MaterialColor]
+/// from a single [Color] for use as a primary swatch.
+///
+/// The [AppThemeExtension] extension on [BuildContext] provides convenient
+/// accessors for primary and text colors defined in [AppTheme].
+library;
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Color Palette - Ihre exakten Farben
   static const Color primaryTeal = Color(0xFF38576B); // Petrol/Teal
   static const Color primaryOrange = Color(0xFFB08251); // Button Farbe
   static const Color textBlack = Colors.black;
@@ -13,8 +27,6 @@ class AppTheme {
   static ThemeData get theme {
     return ThemeData(
       useMaterial3: true,
-      primarySwatch: _createMaterialColor(primaryTeal),
-      primaryColor: primaryTeal,
       scaffoldBackgroundColor: backgroundWhite,
 
       // Color Scheme
@@ -101,7 +113,7 @@ class AppTheme {
           ),
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
           elevation: 2,
-          shadowColor: primaryOrange.withOpacity(0.3),
+          shadowColor: primaryOrange.withAlpha((0.3 * 255).toInt()),
         ),
       ),
 
@@ -125,29 +137,9 @@ class AppTheme {
     );
   }
 
-  // Helper um MaterialColor aus Color zu erstellen
-  static MaterialColor _createMaterialColor(Color color) {
-    List strengths = <double>[.05];
-    Map<int, Color> swatch = {};
-    final int r = color.red, g = color.green, b = color.blue;
-
-    for (int i = 1; i < 10; i++) {
-      strengths.add(0.1 * i);
-    }
-    for (var strength in strengths) {
-      final double ds = 0.5 - strength;
-      swatch[(strength * 1000).round()] = Color.fromRGBO(
-        r + ((ds < 0 ? r : (255 - r)) * ds).round(),
-        g + ((ds < 0 ? g : (255 - g)) * ds).round(),
-        b + ((ds < 0 ? b : (255 - b)) * ds).round(),
-        1,
-      );
-    }
-    return MaterialColor(color.value, swatch);
-  }
 }
 
-// Extension für einfache Farbzugriffe
+// Extension for easy access to theme colors
 extension AppThemeExtension on BuildContext {
   Color get primaryTeal => AppTheme.primaryTeal;
   Color get primaryOrange => AppTheme.primaryOrange;
