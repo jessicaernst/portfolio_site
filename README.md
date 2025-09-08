@@ -43,7 +43,8 @@ A responsive bilingual (German/English) portfolio website built with Flutter Web
 
 3. **Setup development environment**
    ```bash
-   make dev
+   make demo
+   # Use 'make dev' only if you have private localization files
    ```
 
 4. **Run the application**
@@ -88,19 +89,26 @@ portfolio_site/
 
 ---
 
-## 🌐 Localizations Workflow
+## 🌐 Localization Workflow
 
-All UI strings are localized using ARB files.
+The project supports different localization modes:
 
-- **Private ARBs** (real texts) → stored in `private/l10n/`
-- **Public repo** → either empty or contains harmless dummy ARBs
-- **Script** copies the private ARBs into `lib/l10n/` for `flutter gen-l10n`
+### For New Contributors
+- **Use `make demo`** - Sets up placeholder/demo content
+- **Safe for public use** - No private information included
+- **Full functionality** - All features work with demo content
+
+### For Project Owner
+- **Private ARBs** → Real content stored in `private/l10n/`
+- **Use `make dev`** → Copies private ARBs for development
+- **Use `make release`** → Production build with private content
 
 ### Scripts
-`tool/prepare_localizations.sh`
+`tool/prepare_localizations.sh` handles the localization setup:
 
-- `--dev`: Copies private ARBs to `lib/l10n/` and keeps them (local development)
-- `--release`: Copies private ARBs, generates l10n, then cleans them up (CI/Deploy)
+- `--demo`: Uses demo/placeholder content (safe for public)
+- `--dev`: Uses private ARBs and keeps them (requires private files)
+- `--release`: Uses private ARBs, generates l10n, then cleans up
 
 ---
 
@@ -110,7 +118,8 @@ Run `make help` to see all available commands:
 
 ### Development
 ```bash
-make dev      # Setup development environment with localizations
+make demo     # Setup with demo/placeholder content (recommended for new users)
+make dev      # Setup with private localizations (requires private files)
 make run      # Start the app in Chrome browser  
 make deps     # Install Flutter dependencies
 ```
