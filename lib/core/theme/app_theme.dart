@@ -17,8 +17,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const Color primaryTeal = Color(0xFF38576B); // Petrol/Teal
-  static const Color primaryOrange = Color(0xFFB08251); // Button Farbe
+  static const Color primaryTeal = Color(0xFF38576B);
+  static const Color primaryOrange = Color(0xFFB08251);
   static const Color textBlack = Colors.black;
   static const Color textWhite = Colors.white;
   static const Color backgroundWhite = Colors.white;
@@ -136,7 +136,6 @@ class AppTheme {
       ),
     );
   }
-
 }
 
 // Extension for easy access to theme colors
