@@ -52,70 +52,75 @@ class AnimatedBackgroundState extends State<AnimatedBackground>
           ),
         ),
         Positioned(
-          top: 120,
+          top: 90,
           left: -mq.size.width * 0.05,
           right: -mq.size.width * 0.05,
           child: IgnorePointer(
             child: Center(
               child: Opacity(
                 opacity: 0.06,
-                child: Stack(
+                child: Container(
+                  height: mq.size.width * 0.28,
                   alignment: Alignment.center,
-                  children: [
-                    Text(
-                      'APPDEV',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: mq.size.width * 0.25,
-                        fontWeight: FontWeight.w800,
-                        height: 164.3 / 264.26,
-                        letterSpacing: mq.size.width * 0.008,
-                        color: Colors.white,
-                      ),
-                    ),
-
-                    Positioned(
-                      right: mq.size.width * 0.18,
-                      top: -mq.size.width * 0.04,
-                      child: Container(
-                        width: mq.size.width * 0.035,
-                        height: mq.size.width * 0.018,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                            mq.size.width * 0.009,
-                          ),
-                          color: Colors.lightBlue[100]?.withAlpha(
-                            (0.8 * 255).toInt(),
-                          ),
-                          border: Border.all(
-                            color: Colors.white.withAlpha((0.4 * 255).toInt()),
-                            width: 1.5,
-                          ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Text(
+                        'APP DEV',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: mq.size.width * 0.25,
+                          fontWeight: FontWeight.w800,
+                          height: 164.3 / 264.26,
+                          letterSpacing: 0,
+                          color: Colors.white,
                         ),
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            width: mq.size.width * 0.014,
-                            height: mq.size.width * 0.014,
-                            margin: EdgeInsets.all(mq.size.width * 0.002),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withAlpha(
-                                    (0.15 * 255).toInt(),
+                      ),
+                      Positioned(
+                        right: mq.size.width * 0.18,
+                        top: -mq.size.width * 0.04,
+                        child: Container(
+                          width: mq.size.width * 0.035,
+                          height: mq.size.width * 0.018,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                              mq.size.width * 0.009,
+                            ),
+                            color: Colors.lightBlue[100]?.withAlpha(
+                              (0.8 * 255).toInt(),
+                            ),
+                            border: Border.all(
+                              color: Colors.white.withAlpha(
+                                (0.4 * 255).toInt(),
+                              ),
+                              width: 1.5,
+                            ),
+                          ),
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Container(
+                              width: mq.size.width * 0.014,
+                              height: mq.size.width * 0.014,
+                              margin: EdgeInsets.all(mq.size.width * 0.002),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withAlpha(
+                                      (0.15 * 255).toInt(),
+                                    ),
+                                    blurRadius: 3,
+                                    offset: const Offset(0, 1),
                                   ),
-                                  blurRadius: 3,
-                                  offset: const Offset(0, 1),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
