@@ -31,7 +31,7 @@ class PortfolioApp extends ConsumerWidget {
       supportedLocales: const [Locale('en'), Locale('de')],
 
       // Home Page
-      home: const PortfolioScreen(),
+      home: PortfolioScreen(),
     );
   }
 }

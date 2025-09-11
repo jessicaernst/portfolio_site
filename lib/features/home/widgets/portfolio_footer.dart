@@ -11,38 +11,90 @@ class PortfolioFooter extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final textColor = isDark ? AppTheme.white54 : AppTheme.black54;
 
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: AppTheme.spacingLarge),
-      child: Row(
-        children: [
-          SizedBox(width: AppTheme.paddingPage),
-          Text(l10n.copyrightText, style: TextStyle(color: textColor)),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Text(l10n.imprint, style: TextStyle(color: textColor)),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isNarrow = constraints.maxWidth < 500;
+        return Container(
+          padding: EdgeInsets.symmetric(vertical: AppTheme.spacingLarge),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              isNarrow
+                  ? Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: AppTheme.spacingMedium,
+                      runSpacing: AppTheme.spacingSmall,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            l10n.imprint,
+                            style: TextStyle(color: textColor),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            l10n.privacyPolicy,
+                            style: TextStyle(color: textColor),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            l10n.contact,
+                            style: TextStyle(color: textColor),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Row(
+                      children: [
+                        SizedBox(width: AppTheme.paddingPage),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  l10n.imprint,
+                                  style: TextStyle(color: textColor),
+                                ),
+                              ),
+                              SizedBox(width: AppTheme.spacingXLarge),
+                              TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  l10n.privacyPolicy,
+                                  style: TextStyle(color: textColor),
+                                ),
+                              ),
+                              SizedBox(width: AppTheme.spacingXLarge),
+                              TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  l10n.contact,
+                                  style: TextStyle(color: textColor),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+              SizedBox(height: AppTheme.paddingPage),
+              Center(
+                child: Text(
+                  l10n.copyrightText,
+                  style: TextStyle(color: textColor),
+                  textAlign: TextAlign.center,
                 ),
-                SizedBox(width: AppTheme.spacingXLarge),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    l10n.privacyPolicy,
-                    style: TextStyle(color: textColor),
-                  ),
-                ),
-                SizedBox(width: AppTheme.spacingXLarge),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(l10n.contact, style: TextStyle(color: textColor)),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

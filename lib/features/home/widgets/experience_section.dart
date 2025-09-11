@@ -60,22 +60,54 @@ class ExperienceSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                title,
-                style: AppTheme.sectionTitleStyle.copyWith(
-                  color: AppTheme.textWhite,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                period,
-                style: TextStyle(color: AppTheme.white70, fontSize: 13),
-              ),
-            ],
+          LayoutBuilder(
+            builder: (context, constraints) {
+              // If width is small, stack vertically
+              if (constraints.maxWidth < 350) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: AppTheme.sectionTitleStyle.copyWith(
+                        color: AppTheme.textWhite,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 2),
+                    Text(
+                      period,
+                      style: TextStyle(color: AppTheme.white70, fontSize: 13),
+                    ),
+                  ],
+                );
+              } else {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        title,
+                        style: AppTheme.sectionTitleStyle.copyWith(
+                          color: AppTheme.textWhite,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                      ),
+                    ),
+                    SizedBox(width: 8),
+                    Text(
+                      period,
+                      style: TextStyle(color: AppTheme.white70, fontSize: 13),
+                    ),
+                  ],
+                );
+              }
+            },
           ),
           if (subtitle.isNotEmpty) ...[
             SizedBox(height: AppTheme.spacingSmall),
@@ -85,6 +117,7 @@ class ExperienceSection extends StatelessWidget {
                 color: AppTheme.textWhite.withAlpha(210),
                 fontSize: 14,
               ),
+              softWrap: true,
             ),
           ],
           SizedBox(height: AppTheme.spacingSmall),
