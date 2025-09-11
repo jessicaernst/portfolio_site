@@ -34,6 +34,15 @@ class ExperienceSection extends StatelessWidget {
             company: l10n.startupCompany,
             period: l10n.period2024,
           ),
+          SizedBox(height: AppTheme.spacingLarge),
+          Center(
+            child: Text(
+              l10n.downloadCVInfo,
+              style: TextStyle(color: AppTheme.textWhite, fontSize: 15),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          _downloadCVButton(context),
         ],
       ),
     );
@@ -126,6 +135,38 @@ class ExperienceSection extends StatelessWidget {
             style: TextStyle(color: AppTheme.white70, fontSize: 13),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _downloadCVButton(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.only(top: AppTheme.spacingLarge),
+        child: ElevatedButton(
+          onPressed: () {
+            // TODO: Implement download logic
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppTheme.primaryOrange,
+            padding: EdgeInsets.symmetric(
+              horizontal: AppTheme.spacingLarge,
+              vertical: AppTheme.spacingMedium - 4,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: AppTheme.borderRadiusLarge,
+            ),
+            elevation: 4,
+          ),
+          child: Text(
+            l10n.downloadCV,
+            style: AppTheme.buttonTextStyle.copyWith(
+              color: AppTheme.textWhite,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
       ),
     );
   }

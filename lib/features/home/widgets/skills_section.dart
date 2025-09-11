@@ -41,11 +41,23 @@ class SkillsSection extends StatelessWidget {
                 ['Android XML View', 3],
                 ['Android Room DB', 3],
               ]),
-              _skillBox(context, l10n.softwareDevelopment, [
+              _skillBox(context, l10n.crossoverDevelopment.toUpperCase(), [
                 ['Flutter', 4],
-                ['Java', 3],
+                ['Dart', 4],
+                ['Provider', 4],
+                ['Riverpod', 4],
+              ]),
+              _skillBox(context, 'BEST PRACTICES & DESIGN', [
+                ['Clean Code', 4],
+                ['Clean Architecture', 4],
+                ['Scrum/Agile', 5],
+                ['UX/UI Design', 4],
+              ]),
+              _skillBox(context, l10n.softwareDevelopment, [
                 ['Git', 4],
-                ['Databases', 3],
+                ['Databases', 4],
+                ['REST API', 2],
+                ['Java', 3],
               ]),
             ],
           ),
@@ -68,13 +80,19 @@ class SkillsSection extends StatelessWidget {
     final skillTextColor = isDark
         ? AppTheme.textWhite.withAlpha(230)
         : AppTheme.textBlack;
-    final dotFilledColor = isDark ? AppTheme.textWhite : AppTheme.textBlack;
+    final dotFilledColor = AppTheme.primaryTeal;
     final dotEmptyColor = isDark
-        ? AppTheme.textWhite.withAlpha(AppTheme.alpha(0.18))
+        ? AppTheme.primaryTeal.withAlpha(AppTheme.alpha(0.18))
         : AppTheme.grey300;
 
+    MediaQuery.of(context);
+    // 1200 ist das maxWidth der Sections, 4 Karten pro Reihe, spacingLarge dazwischen
+    final double maxCardWidth = ((1200 - 3 * AppTheme.spacingLarge) / 4).clamp(
+      220.0,
+      340.0,
+    );
     return Container(
-      width: 280,
+      width: maxCardWidth,
       padding: EdgeInsets.all(AppTheme.spacingMedium),
       decoration: BoxDecoration(
         color: boxColor,
