@@ -8,8 +8,6 @@ import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
 
-  int _alpha(double v) => (v * 255).toInt();
-
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
@@ -22,16 +20,16 @@ class HeroSection extends StatelessWidget {
     // Select language and screen size specific header text image
     final AssetGenImage headerTextImage;
     if (screenWidth < 650) {
-      headerTextImage = isGerman 
-          ? Assets.images.headerTextMobileDe 
+      headerTextImage = isGerman
+          ? Assets.images.headerTextMobileDe
           : Assets.images.headerTextMobileEn;
     } else if (screenWidth < 1100) {
-      headerTextImage = isGerman 
-          ? Assets.images.headerTextTabletDe 
+      headerTextImage = isGerman
+          ? Assets.images.headerTextTabletDe
           : Assets.images.headerTextTabletEn;
     } else {
-      headerTextImage = isGerman 
-          ? Assets.images.headerTextDesktopDe 
+      headerTextImage = isGerman
+          ? Assets.images.headerTextDesktopDe
           : Assets.images.headerTextDesktopEn;
     }
 
@@ -50,23 +48,31 @@ class HeroSection extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final heroPadding = EdgeInsets.symmetric(
-          vertical: isNarrow ? 48 : 100,
-          horizontal: isNarrow ? 24 : 48,
+          vertical: isNarrow
+              ? AppTheme.spacingXLarge * 2
+              : AppTheme.spacingXLarge * 3,
+          horizontal: isNarrow
+              ? AppTheme.spacingLarge
+              : AppTheme.spacingXLarge * 1.5,
         );
 
         final profileImageWidget = Center(
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: imageWidth),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(isNarrow ? 24 : 18),
+              borderRadius: BorderRadius.circular(
+                isNarrow ? AppTheme.radiusXLarge : AppTheme.radiusLarge,
+              ),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.white.withAlpha(_alpha(0.06)),
-                    borderRadius: BorderRadius.circular(isNarrow ? 24 : 18),
+                    color: AppTheme.textWhite.withAlpha(AppTheme.alpha(0.06)),
+                    borderRadius: BorderRadius.circular(
+                      isNarrow ? AppTheme.radiusXLarge : AppTheme.radiusLarge,
+                    ),
                     border: Border.all(
-                      color: Colors.white.withAlpha(_alpha(0.08)),
+                      color: AppTheme.textWhite.withAlpha(AppTheme.alpha(0.08)),
                     ),
                   ),
                   child: profileImage.image(fit: BoxFit.cover),
@@ -94,22 +100,22 @@ class HeroSection extends StatelessWidget {
                       fit: BoxFit.scaleDown,
                       child: headerTextImage.image(),
                     ),
-                    if (isNarrow) const SizedBox(height: 24),
+                    if (isNarrow) SizedBox(height: AppTheme.spacingLarge),
                     if (isNarrow) profileImageWidget,
-                    const SizedBox(height: 24),
+                    SizedBox(height: AppTheme.spacingLarge),
                     Row(
                       mainAxisAlignment: isNarrow
                           ? MainAxisAlignment.center
                           : MainAxisAlignment.start,
                       children: [
                         _socialIcon('in'),
-                        const SizedBox(width: 16),
+                        SizedBox(width: AppTheme.spacingMedium),
                         _socialIcon('GH'),
-                        const SizedBox(width: 16),
+                        SizedBox(width: AppTheme.spacingMedium),
                         _socialIcon('@'),
                       ],
                     ),
-                    const SizedBox(height: 32),
+                    SizedBox(height: AppTheme.spacingXLarge),
                     Row(
                       mainAxisAlignment: isNarrow
                           ? MainAxisAlignment.center
@@ -119,18 +125,18 @@ class HeroSection extends StatelessWidget {
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppTheme.primaryOrange,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 28,
-                              vertical: 14,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: AppTheme.spacingXLarge,
+                              vertical: AppTheme.spacingLarge - 2,
                             ),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(999),
+                              borderRadius: AppTheme.borderRadiusXXLarge,
                             ),
                             elevation: 6,
                           ),
                           child: Text(
                             l10n.downloadCV,
-                            style: TextStyle(
+                            style: AppTheme.buttonTextStyle.copyWith(
                               color: AppTheme.textWhite,
                               fontWeight: FontWeight.w700,
                             ),
@@ -141,7 +147,11 @@ class HeroSection extends StatelessWidget {
                   ],
                 ),
               ),
-              if (!isNarrow) const SizedBox(width: 24, height: 24),
+              if (!isNarrow)
+                SizedBox(
+                  width: AppTheme.spacingLarge,
+                  height: AppTheme.spacingLarge,
+                ),
               if (!isNarrow) Expanded(flex: 0, child: profileImageWidget),
             ],
           ),
@@ -174,8 +184,10 @@ class HeroSection extends StatelessWidget {
       height: 44,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.white.withAlpha((0.28 * 255).toInt())),
-        color: Colors.white.withAlpha((0.06 * 255).toInt()),
+        border: Border.all(
+          color: AppTheme.textWhite.withAlpha(AppTheme.alpha(0.28)),
+        ),
+        color: AppTheme.textWhite.withAlpha(AppTheme.alpha(0.06)),
       ),
       child: Center(child: icon),
     );

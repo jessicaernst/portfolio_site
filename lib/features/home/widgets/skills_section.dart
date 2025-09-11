@@ -7,12 +7,12 @@ class SkillsSection extends StatelessWidget {
   final bool isDark;
   const SkillsSection({super.key, this.isDark = true});
 
-  int _alpha(double v) => (v * 255).toInt();
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final subTitleColor = isDark ? Colors.white.withAlpha(180) : Colors.black54;
+    final subTitleColor = isDark
+        ? AppTheme.textWhite.withAlpha(180)
+        : AppTheme.black54;
 
     return SectionContainer(
       isDark: isDark,
@@ -24,10 +24,10 @@ class SkillsSection extends StatelessWidget {
             l10n.technicalSkills,
             style: TextStyle(color: subTitleColor, fontSize: 14),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: AppTheme.spacingLarge),
           Wrap(
-            spacing: 20,
-            runSpacing: 20,
+            spacing: AppTheme.spacingLarge,
+            runSpacing: AppTheme.spacingLarge,
             children: [
               _skillBox(context, l10n.uiDevelopment, [
                 ['Swift', 4],
@@ -60,53 +60,61 @@ class SkillsSection extends StatelessWidget {
     List<List<dynamic>> skills,
   ) {
     final boxColor = isDark
-        ? Colors.white.withAlpha(_alpha(0.04))
-        : Colors.grey.shade100;
+        ? AppTheme.textWhite.withAlpha(AppTheme.alpha(0.04))
+        : AppTheme.grey100;
     final borderColor = isDark
-        ? Colors.white.withAlpha(_alpha(0.06))
-        : Colors.grey.shade300;
-    final skillTextColor = isDark ? Colors.white.withAlpha(230) : Colors.black;
-    final dotFilledColor = isDark ? Colors.white : Colors.black;
+        ? AppTheme.textWhite.withAlpha(AppTheme.alpha(0.06))
+        : AppTheme.grey300;
+    final skillTextColor = isDark
+        ? AppTheme.textWhite.withAlpha(230)
+        : AppTheme.textBlack;
+    final dotFilledColor = isDark ? AppTheme.textWhite : AppTheme.textBlack;
     final dotEmptyColor = isDark
-        ? Colors.white.withAlpha(_alpha(0.18))
-        : Colors.grey.shade300;
+        ? AppTheme.textWhite.withAlpha(AppTheme.alpha(0.18))
+        : AppTheme.grey300;
 
     return Container(
       width: 280,
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(AppTheme.spacingMedium),
       decoration: BoxDecoration(
         color: boxColor,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: AppTheme.borderRadiusMedium,
         border: Border.all(color: borderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppTheme.spacingMedium - 4,
+              vertical: AppTheme.spacingSmall - 2,
+            ),
             decoration: BoxDecoration(
               color: context.primaryTeal,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: AppTheme.borderRadiusMedium,
             ),
             child: Text(
               category,
-              style: const TextStyle(
-                color: Colors.white,
+              style: AppTheme.labelStyle.copyWith(
+                color: AppTheme.textWhite,
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: AppTheme.spacingMedium),
           ...skills.map((skill) {
             return Padding(
-              padding: const EdgeInsets.only(bottom: 10),
+              padding: EdgeInsets.only(bottom: AppTheme.spacingSmall + 2),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     skill[0],
-                    style: TextStyle(color: skillTextColor, fontSize: 14),
+                    style: AppTheme.labelStyle.copyWith(
+                      color: skillTextColor,
+                      fontSize: 14,
+                    ),
                   ),
                   Row(
                     children: List.generate(5, (index) {

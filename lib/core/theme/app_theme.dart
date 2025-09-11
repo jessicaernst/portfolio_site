@@ -3,8 +3,7 @@
 ///
 /// The [AppTheme] class provides static constants for commonly used colors,
 /// and a static [theme] getter that returns a [ThemeData] object configured
-/// with custom colors, text styles using Google Fonts, and component themes
-/// such as AppBar, ElevatedButton, TextButton, and Card.
+/// with custom colors, text styles, and component themes such as AppBar, ElevatedButton, TextButton, and Card.
 ///
 /// Includes a helper method [_createMaterialColor] to generate a [MaterialColor]
 /// from a single [Color] for use as a primary swatch.
@@ -14,9 +13,79 @@
 library;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
+  // BorderRadius
+  static const double radiusSmall = 8;
+  static const double radiusMedium = 12;
+  static const double radiusLarge = 16;
+  static const double radiusXLarge = 25;
+  static const double radiusXXLarge = 999;
+
+  static BorderRadius get borderRadiusSmall =>
+      BorderRadius.circular(radiusSmall);
+  static BorderRadius get borderRadiusMedium =>
+      BorderRadius.circular(radiusMedium);
+  static BorderRadius get borderRadiusLarge =>
+      BorderRadius.circular(radiusLarge);
+  static BorderRadius get borderRadiusXLarge =>
+      BorderRadius.circular(radiusXLarge);
+  static BorderRadius get borderRadiusXXLarge =>
+      BorderRadius.circular(radiusXXLarge);
+
+  // Padding & Spacing
+  static const double paddingPage = 28;
+  static const double paddingSection = 24;
+  static const double paddingButton = 16;
+  static const double spacingSmall = 8;
+  static const double spacingMedium = 16;
+  static const double spacingLarge = 24;
+  static const double spacingXLarge = 32;
+
+  // Weitere Farben
+  static Color get white70 => Colors.white70;
+  static Color get white54 => Colors.white54;
+  static Color get black54 => Colors.black54;
+  static Color get black87 => Colors.black87;
+  static Color get lightBlue100 => Colors.lightBlue[100]!;
+  static Color get grey100 => Colors.grey.shade100;
+  static Color get grey200 => Colors.grey.shade200;
+  static Color get grey300 => Colors.grey.shade300;
+
+  // TextStyles
+  static TextStyle get sectionTitleStyle => const TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+    color: textBlack,
+  );
+
+  static TextStyle get buttonTextStyle => const TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: textWhite,
+  );
+
+  static TextStyle get labelStyle => const TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: textBlack,
+  );
+
+  /// Converts a double value [v] representing an alpha (opacity) value in the range [0.0, 1.0]
+  /// to an integer in the range [0, 255] suitable for use as an ARGB alpha channel.
+  ///
+  /// If [v] is NaN or infinite, returns 0.
+  /// Otherwise, clamps [v] between 0.0 and 1.0, multiplies by 255, and returns the result as an integer.
+  static int alpha(double v) {
+    if (v.isNaN || v.isInfinite) {
+      return 0;
+    }
+    return ((v.clamp(0.0, 1.0)) * 255).round();
+  }
+
   static const Color primaryTeal = Color(0xFF38576B);
   static const Color primaryOrange = Color(0xFFB08251);
   static const Color textBlack = Colors.black;
@@ -29,7 +98,7 @@ class AppTheme {
       useMaterial3: true,
       scaffoldBackgroundColor: backgroundWhite,
 
-      // Color Scheme
+      // Color scheme
       colorScheme: const ColorScheme.light(
         primary: primaryTeal,
         secondary: primaryOrange,
@@ -37,108 +106,106 @@ class AppTheme {
         onSurface: textBlack,
       ),
 
-      // Typography - Using Google Fonts with GDPR compliance (no auto-download)
-      // muss geändert werden auf die nutzung der eingebundenen fonts im assets ordner und googlefonts raus das failed
-      textTheme: ThemeData.light().textTheme.copyWith(
-        // Hero Title
-        displayLarge: const TextStyle(
+      // Use bundled Poppins font from assets for all text styles
+      fontFamily: 'Poppins',
+      textTheme: const TextTheme(
+        displayLarge: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 48,
           fontWeight: FontWeight.bold,
           color: textWhite,
           height: 1.2,
         ),
-
-        // Section Titles
-        headlineLarge: const TextStyle(
+        headlineLarge: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 32,
           fontWeight: FontWeight.bold,
           color: textBlack,
         ),
-
-        // Subsection Titles
-        headlineMedium: const TextStyle(
+        headlineMedium: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: textBlack,
         ),
-
-        // Body Text Large
-        bodyLarge: const TextStyle(
+        bodyLarge: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 16,
           color: textBlack,
           height: 1.6,
         ),
-
-        // Body Text Medium
-        bodyMedium: const TextStyle(
+        bodyMedium: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 14,
           color: textBlack,
           height: 1.5,
         ),
-
-        // Labels
-        labelLarge: const TextStyle(
+        labelLarge: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 16,
           fontWeight: FontWeight.w500,
           color: textBlack,
         ),
-
-        // Small Text
-        bodySmall: const TextStyle(
+        bodySmall: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 12,
           color: textBlack,
         ),
       ),
 
-      // AppBar Theme
-      appBarTheme: AppBarTheme(
+      // AppBar theme
+      appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
         scrolledUnderElevation: 0,
         foregroundColor: textBlack,
-        titleTextStyle: GoogleFonts.poppins(
+        titleTextStyle: TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: textBlack,
         ),
       ),
 
-      // Button Themes
+      // Button themes
       elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: primaryOrange,
-          foregroundColor: textWhite,
-          textStyle: GoogleFonts.poppins(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
+        style: ButtonStyle(
+          backgroundColor: WidgetStatePropertyAll(primaryOrange),
+          foregroundColor: WidgetStatePropertyAll(textWhite),
+          textStyle: WidgetStatePropertyAll(
+            TextStyle(
+              fontFamily: 'Poppins',
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+          shape: WidgetStatePropertyAll(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-          elevation: 2,
-          shadowColor: primaryOrange.withAlpha((0.3 * 255).toInt()),
+          padding: WidgetStatePropertyAll(
+            EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+          ),
+          elevation: WidgetStatePropertyAll(2),
+          shadowColor: WidgetStatePropertyAll(
+            primaryOrange.withAlpha(AppTheme.alpha(0.3)),
+          ),
         ),
       ),
 
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          foregroundColor: textBlack,
-          textStyle: GoogleFonts.poppins(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
+        style: ButtonStyle(
+          foregroundColor: WidgetStatePropertyAll(textBlack),
+          textStyle: WidgetStatePropertyAll(
+            TextStyle(
+              fontFamily: 'Poppins',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ),
 
-      // Card Theme
+      // Card theme
       cardTheme: CardThemeData(
         elevation: 8,
         shadowColor: Colors.black.withAlpha((0.1 * 255).toInt()),

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:portfolio_site/core/theme/app_theme.dart';
 
 class SectionContainer extends StatelessWidget {
   final String title;
@@ -14,18 +15,18 @@ class SectionContainer extends StatelessWidget {
     this.isDark = true,
   });
 
-  int _alpha(double v) => (v * 255).toInt();
-
   @override
   Widget build(BuildContext context) {
     final contentWidget = Container(
-      padding: const EdgeInsets.all(24),
+      padding: EdgeInsets.all(AppTheme.paddingSection),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withAlpha(_alpha(0.06)) : Colors.white.withOpacity(0.9),
-        borderRadius: BorderRadius.circular(16),
+        color: isDark
+            ? Colors.white.withAlpha(AppTheme.alpha(0.06))
+            : Colors.white.withAlpha(AppTheme.alpha(0.8)),
+        borderRadius: AppTheme.borderRadiusLarge,
         border: isDark
             ? Border.all(
-                color: Colors.white.withAlpha(_alpha(0.08)),
+                color: AppTheme.textWhite.withAlpha(AppTheme.alpha(0.08)),
               )
             : null,
       ),
@@ -34,22 +35,23 @@ class SectionContainer extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
-              color: isDark ? Colors.white : Colors.black,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+            style: AppTheme.sectionTitleStyle.copyWith(
+              color: isDark ? AppTheme.textWhite : AppTheme.textBlack,
             ),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: AppTheme.spacingMedium),
           content,
         ],
       ),
     );
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 28, vertical: 28),
+      margin: EdgeInsets.symmetric(
+        horizontal: AppTheme.paddingPage,
+        vertical: AppTheme.paddingPage,
+      ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: AppTheme.borderRadiusLarge,
         child: isDark
             ? BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),

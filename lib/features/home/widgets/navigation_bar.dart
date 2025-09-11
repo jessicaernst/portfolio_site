@@ -3,22 +3,23 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio_site/business_logic/local/locale_provider.dart';
+import 'package:portfolio_site/core/theme/app_theme.dart';
 import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 
 class PortfolioNavigationBar extends ConsumerStatefulWidget {
   const PortfolioNavigationBar({super.key});
 
   @override
-  ConsumerState<PortfolioNavigationBar> createState() => _PortfolioNavigationBarState();
+  ConsumerState<PortfolioNavigationBar> createState() =>
+      _PortfolioNavigationBarState();
 }
 
 enum NavigationItem { home, portfolio }
 
-class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar> {
+class _PortfolioNavigationBarState
+    extends ConsumerState<PortfolioNavigationBar> {
   bool _isToggling = false;
   NavigationItem _activeItem = NavigationItem.home; // Default to home
-
-  int _alpha(double v) => (v * 255).toInt();
 
   @override
   Widget build(BuildContext context) {
@@ -28,30 +29,32 @@ class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar>
 
     return Container(
       height: 72,
-      padding: const EdgeInsets.symmetric(horizontal: 28),
+      padding: EdgeInsets.symmetric(horizontal: AppTheme.paddingPage),
       alignment: Alignment.centerRight,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: AppTheme.borderRadiusLarge,
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 18),
-            color: Colors.white.withAlpha(_alpha(0.04)),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppTheme.spacingLarge - 6,
+            ),
+            color: AppTheme.textWhite.withAlpha(AppTheme.alpha(0.04)),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 _navItem(
-                  l10n.home, 
+                  l10n.home,
                   NavigationItem.home,
                   () => setState(() => _activeItem = NavigationItem.home),
                 ),
-                const SizedBox(width: 24),
+                SizedBox(width: AppTheme.spacingLarge),
                 _navItem(
-                  l10n.portfolio, 
+                  l10n.portfolio,
                   NavigationItem.portfolio,
                   () => setState(() => _activeItem = NavigationItem.portfolio),
                 ),
-                const SizedBox(width: 24),
+                SizedBox(width: AppTheme.spacingLarge),
                 _languageSwitch(currentLocale, localeNotifier),
               ],
             ),
@@ -63,33 +66,34 @@ class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar>
 
   Widget _navItem(String text, NavigationItem item, VoidCallback? onPressed) {
     final isActive = _activeItem == item;
-    
+
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: isActive 
-          ? Colors.lightBlue[100]?.withAlpha((0.2 * 255).toInt())
-          : Colors.transparent,
+        borderRadius: AppTheme.borderRadiusSmall,
+        color: isActive
+            ? AppTheme.lightBlue100.withAlpha(AppTheme.alpha(0.2))
+            : Colors.transparent,
         border: isActive
-          ? Border.all(
-              color: Colors.lightBlue[100]?.withAlpha((0.4 * 255).toInt()) ?? Colors.transparent,
-              width: 1,
-            )
-          : null,
+            ? Border.all(
+                color: AppTheme.lightBlue100.withAlpha(AppTheme.alpha(0.4)),
+                width: 1,
+              )
+            : null,
       ),
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppTheme.spacingMedium,
+            vertical: AppTheme.spacingSmall,
+          ),
           minimumSize: Size.zero,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
         child: Text(
           text,
-          style: TextStyle(
-            color: isActive 
-              ? Colors.lightBlue[100] 
-              : Colors.white,
+          style: AppTheme.labelStyle.copyWith(
+            color: isActive ? AppTheme.lightBlue100 : AppTheme.textWhite,
             fontSize: 16,
             fontWeight: isActive ? FontWeight.w600 : FontWeight.normal,
           ),
@@ -100,38 +104,38 @@ class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar>
 
   Widget _languageSwitch(Locale currentLocale, LocaleNotifier localeNotifier) {
     return TextButton(
-      onPressed: _isToggling 
-        ? null 
-        : () => _handleLanguageToggle(localeNotifier),
+      onPressed: _isToggling
+          ? null
+          : () => _handleLanguageToggle(localeNotifier),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (_isToggling)
             SizedBox(
-              width: 16,
-              height: 16,
+              width: AppTheme.spacingMedium,
+              height: AppTheme.spacingMedium,
               child: CircularProgressIndicator(
                 strokeWidth: 2,
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  Colors.white.withAlpha((0.8 * 255).toInt()),
+                  AppTheme.textWhite.withAlpha(AppTheme.alpha(0.8)),
                 ),
               ),
             )
           else
             Text(
               currentLocale.languageCode.toUpperCase(),
-              style: const TextStyle(
-                color: Colors.white, 
+              style: AppTheme.labelStyle.copyWith(
+                color: AppTheme.textWhite,
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
             ),
-          const SizedBox(width: 4),
+          SizedBox(width: AppTheme.spacingSmall - 4),
           Icon(
             Icons.language,
-            color: _isToggling 
-              ? Colors.white.withAlpha((0.4 * 255).toInt())
-              : Colors.white.withAlpha((0.8 * 255).toInt()),
+            color: _isToggling
+                ? AppTheme.textWhite.withAlpha(AppTheme.alpha(0.4))
+                : AppTheme.textWhite.withAlpha(AppTheme.alpha(0.8)),
             size: 18,
           ),
         ],

@@ -6,8 +6,6 @@ import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 class ExperienceSection extends StatelessWidget {
   const ExperienceSection({super.key});
 
-  int _alpha(double v) => (v * 255).toInt();
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -22,14 +20,14 @@ class ExperienceSection extends StatelessWidget {
             company: l10n.melitaCompany,
             period: l10n.period20182020,
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: AppTheme.spacingMedium),
           _experienceItem(
             title: l10n.mobileAppDeveloper,
             subtitle: l10n.nativeAppDescription,
             company: l10n.micaboCompany,
             period: l10n.period2023,
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: AppTheme.spacingMedium),
           _experienceItem(
             title: l10n.mobileAppDeveloperPM,
             subtitle: '',
@@ -48,10 +46,10 @@ class ExperienceSection extends StatelessWidget {
     required String period,
   }) {
     return Container(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(AppTheme.spacingMedium),
       decoration: BoxDecoration(
-        color: Colors.white.withAlpha(_alpha(0.04)),
-        borderRadius: BorderRadius.circular(10),
+        color: AppTheme.textWhite.withAlpha(AppTheme.alpha(0.04)),
+        borderRadius: AppTheme.borderRadiusMedium,
         border: Border(
           left: BorderSide(
             color: AppTheme.primaryOrange.withAlpha(200),
@@ -67,30 +65,33 @@ class ExperienceSection extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: AppTheme.sectionTitleStyle.copyWith(
+                  color: AppTheme.textWhite,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 period,
-                style: TextStyle(color: Colors.white70, fontSize: 13),
+                style: TextStyle(color: AppTheme.white70, fontSize: 13),
               ),
             ],
           ),
           if (subtitle.isNotEmpty) ...[
-            const SizedBox(height: 6),
+            SizedBox(height: AppTheme.spacingSmall),
             Text(
               subtitle,
               style: TextStyle(
-                color: Colors.white.withAlpha(210),
+                color: AppTheme.textWhite.withAlpha(210),
                 fontSize: 14,
               ),
             ),
           ],
-          const SizedBox(height: 8),
-          Text(company, style: TextStyle(color: Colors.white70, fontSize: 13)),
+          SizedBox(height: AppTheme.spacingSmall),
+          Text(
+            company,
+            style: TextStyle(color: AppTheme.white70, fontSize: 13),
+          ),
         ],
       ),
     );
