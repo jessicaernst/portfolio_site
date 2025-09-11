@@ -38,9 +38,11 @@ class AppTheme {
       ),
 
       // Typography - Using Google Fonts with GDPR compliance (no auto-download)
-      textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+      // muss geändert werden auf die nutzung der eingebundenen fonts im assets ordner und googlefonts raus das failed
+      textTheme: ThemeData.light().textTheme.copyWith(
         // Hero Title
-        displayLarge: GoogleFonts.poppins(
+        displayLarge: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 48,
           fontWeight: FontWeight.bold,
           color: textWhite,
@@ -48,42 +50,51 @@ class AppTheme {
         ),
 
         // Section Titles
-        headlineLarge: GoogleFonts.poppins(
+        headlineLarge: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 32,
           fontWeight: FontWeight.bold,
           color: textBlack,
         ),
 
         // Subsection Titles
-        headlineMedium: GoogleFonts.poppins(
+        headlineMedium: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: textBlack,
         ),
 
         // Body Text Large
-        bodyLarge: GoogleFonts.poppins(
+        bodyLarge: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 16,
           color: textBlack,
           height: 1.6,
         ),
 
         // Body Text Medium
-        bodyMedium: GoogleFonts.poppins(
+        bodyMedium: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 14,
           color: textBlack,
           height: 1.5,
         ),
 
         // Labels
-        labelLarge: GoogleFonts.poppins(
+        labelLarge: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 16,
           fontWeight: FontWeight.w500,
           color: textBlack,
         ),
 
         // Small Text
-        bodySmall: GoogleFonts.poppins(fontSize: 12, color: textBlack),
+        bodySmall: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 12,
+          color: textBlack,
+        ),
       ),
 
       // AppBar Theme
