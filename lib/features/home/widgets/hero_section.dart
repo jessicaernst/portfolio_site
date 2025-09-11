@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/core/theme/app_theme.dart';
 import 'package:portfolio_site/gen/assets.gen.dart';
+import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -13,14 +14,25 @@ class HeroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     final screenWidth = mq.size.width;
+    final l10n = AppLocalizations.of(context);
 
+    // Determine current locale
+    final isGerman = Localizations.localeOf(context).languageCode == 'de';
+
+    // Select language and screen size specific header text image
     final AssetGenImage headerTextImage;
     if (screenWidth < 650) {
-      headerTextImage = Assets.images.headerTextMobile;
+      headerTextImage = isGerman 
+          ? Assets.images.headerTextMobileDe 
+          : Assets.images.headerTextMobileEn;
     } else if (screenWidth < 1100) {
-      headerTextImage = Assets.images.headerTextTablet;
+      headerTextImage = isGerman 
+          ? Assets.images.headerTextTabletDe 
+          : Assets.images.headerTextTabletEn;
     } else {
-      headerTextImage = Assets.images.headerTextDesktop;
+      headerTextImage = isGerman 
+          ? Assets.images.headerTextDesktopDe 
+          : Assets.images.headerTextDesktopEn;
     }
 
     final AssetGenImage profileImage;
@@ -31,7 +43,6 @@ class HeroSection extends StatelessWidget {
     } else {
       profileImage = Assets.images.profileImageDesktop;
     }
-
     final isNarrow = screenWidth < 900;
 
     final imageWidth = (screenWidth * 0.3).clamp(260.0, 400.0);
@@ -45,9 +56,7 @@ class HeroSection extends StatelessWidget {
 
         final profileImageWidget = Center(
           child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: imageWidth,
-            ),
+            constraints: BoxConstraints(maxWidth: imageWidth),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(isNarrow ? 24 : 18),
               child: BackdropFilter(
@@ -55,16 +64,12 @@ class HeroSection extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white.withAlpha(_alpha(0.06)),
-                    borderRadius: BorderRadius.circular(
-                      isNarrow ? 24 : 18,
-                    ),
+                    borderRadius: BorderRadius.circular(isNarrow ? 24 : 18),
                     border: Border.all(
                       color: Colors.white.withAlpha(_alpha(0.08)),
                     ),
                   ),
-                  child: profileImage.image(
-                    fit: BoxFit.cover,
-                  ),
+                  child: profileImage.image(fit: BoxFit.cover),
                 ),
               ),
             ),
@@ -81,7 +86,9 @@ class HeroSection extends StatelessWidget {
               Expanded(
                 flex: isNarrow ? 0 : 1,
                 child: Column(
-                  crossAxisAlignment: isNarrow ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+                  crossAxisAlignment: isNarrow
+                      ? CrossAxisAlignment.center
+                      : CrossAxisAlignment.start,
                   children: [
                     FittedBox(
                       fit: BoxFit.scaleDown,
@@ -91,7 +98,9 @@ class HeroSection extends StatelessWidget {
                     if (isNarrow) profileImageWidget,
                     const SizedBox(height: 24),
                     Row(
-                      mainAxisAlignment: isNarrow ? MainAxisAlignment.center : MainAxisAlignment.start,
+                      mainAxisAlignment: isNarrow
+                          ? MainAxisAlignment.center
+                          : MainAxisAlignment.start,
                       children: [
                         _socialIcon('in'),
                         const SizedBox(width: 16),
@@ -102,7 +111,9 @@ class HeroSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 32),
                     Row(
-                      mainAxisAlignment: isNarrow ? MainAxisAlignment.center : MainAxisAlignment.start,
+                      mainAxisAlignment: isNarrow
+                          ? MainAxisAlignment.center
+                          : MainAxisAlignment.start,
                       children: [
                         ElevatedButton(
                           onPressed: () {},
@@ -117,8 +128,8 @@ class HeroSection extends StatelessWidget {
                             ),
                             elevation: 6,
                           ),
-                          child: const Text(
-                            'Download CV',
+                          child: Text(
+                            l10n.downloadCV,
                             style: TextStyle(
                               color: AppTheme.textWhite,
                               fontWeight: FontWeight.w700,
@@ -131,11 +142,7 @@ class HeroSection extends StatelessWidget {
                 ),
               ),
               if (!isNarrow) const SizedBox(width: 24, height: 24),
-              if (!isNarrow)
-                Expanded(
-                  flex: 0,
-                  child: profileImageWidget,
-                ),
+              if (!isNarrow) Expanded(flex: 0, child: profileImageWidget),
             ],
           ),
         );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/core/theme/app_theme.dart';
 import 'package:portfolio_site/features/home/widgets/section_container.dart';
+import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 
 class ProjectsSection extends StatelessWidget {
   final bool isDark;
@@ -10,6 +11,7 @@ class ProjectsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final containerColor = isDark
         ? Colors.white.withAlpha(_alpha(0.04))
         : Colors.grey.shade100;
@@ -26,7 +28,7 @@ class ProjectsSection extends StatelessWidget {
 
     return SectionContainer(
       isDark: isDark,
-      title: 'Aktuelle Projekte',
+      title: l10n.currentProjects,
       content: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -54,7 +56,7 @@ class ProjectsSection extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'Multimodales Quiz & Lern-App',
+              l10n.brainbenchTitle,
               style: TextStyle(
                 color: titleColor,
                 fontSize: 20,
@@ -63,14 +65,11 @@ class ProjectsSection extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              'Eine mobile Lernplattform mit Quizfunktionen, Kategorien & Themenverwaltung, integrierten Fortschrittssystem und Progress Tracking.',
+              l10n.brainbenchDescription,
               style: TextStyle(color: subtitleColor, fontSize: 15, height: 1.5),
             ),
             const SizedBox(height: 12),
-            Text(
-              'Technologien: Flutter, Firebase (Firestore, Auth, Storage), Riverpod',
-              style: TextStyle(color: techColor),
-            ),
+            Text(l10n.brainbenchTech, style: TextStyle(color: techColor)),
             const SizedBox(height: 12),
             TextButton(
               onPressed: () {},
@@ -84,7 +83,10 @@ class ProjectsSection extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              child: Text('Mehr →', style: TextStyle(color: buttonTextColor)),
+              child: Text(
+                l10n.moreArrow,
+                style: TextStyle(color: buttonTextColor),
+              ),
             ),
           ],
         ),

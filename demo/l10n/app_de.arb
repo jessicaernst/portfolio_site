@@ -1,13 +1,391 @@
 {
   "@@locale": "de",
   "app_title": "Demo-Portfolio (Platzhalter)",
-  "@app_title": { "description": "Platzhalter für den Haupttitel der Anwendung." },
+  "@app_title": {
+    "description": "Platzhalter für den Haupttitel der Anwendung."
+  },
   "nav_home": "Start (Demo)",
-  "@nav_home": { "description": "Navigationspunkt für die Startseite (Demo)." },
+  "@nav_home": {
+    "description": "Navigationspunkt für die Startseite (Demo)."
+  },
   "nav_portfolio": "Portfolio (Demo)",
-  "@nav_portfolio": { "description": "Navigationspunkt für die Portfolio-Seite (Demo)." },
+  "@nav_portfolio": {
+    "description": "Navigationspunkt für die Portfolio-Seite (Demo)."
+  },
   "nav_imprint": "Impressum (Demo)",
-  "@nav_imprint": { "description": "Navigationspunkt für die Impressum-Seite (Demo)." },
+  "@nav_imprint": {
+    "description": "Navigationspunkt für die Impressum-Seite (Demo)."
+  },
   "nav_privacy": "Datenschutz (Demo)",
-  "@nav_privacy": { "description": "Navigationspunkt für die Datenschutz-Seite (Demo)." }
+  "@nav_privacy": {
+    "description": "Navigationspunkt für die Datenschutz-Seite (Demo)."
+  },
+  "nav_language": "Sprache",
+  "@nav_language": {
+    "description": "Navigationspunkt für die Sprachauswahl."
+  },
+  "nav_contact": "Kontakt",
+  "@nav_contact": {
+    "description": "Navigationspunkt für die Kontakt-Seite."
+  },
+  "hero_download_cv": "CV herunterladen",
+  "@hero_download_cv": {
+    "description": "Text für den CV-Download-Button."
+  },
+  "about_title": "Über mich",
+  "@about_title": {
+    "description": "Titel für den Über-mich-Abschnitt."
+  },
+  "about_description_1": "Ich bringe fundierte Erfahrung in der Entwicklung moderner mobiler Anwendungen mit – kombiniert mit einem ausgeprägten Interesse an neuen Technologien. In agilen, dynamischen Projektumfeldern arbeite ich lösungsorientiert, kommunikationsstark und mit einem klaren Ziel: Nutzerbedürfnisse und Teamdynamik.",
+  "@about_description_1": {
+    "description": "Erster Absatz der Über-mich-Beschreibung."
+  },
+  "about_description_2": "Dabei schätze ich den Austausch auf Augenhöhe, unterstütze eine offene Feedbackkultur und übernehme gerne Verantwortung.",
+  "@about_description_2": {
+    "description": "Zweiter Absatz der Über-mich-Beschreibung."
+  },
+  "about_description_3": "Durch kontinuierliche Weiterbildung erweitere ich mein Wissen gezielt und denke dabei gern über etablierte Grenzen hinaus – immer mit dem Ziel, qualitativ hochwertige, nachhaltige und gemeinsam getragene Ergebnisse zu schaffen.",
+  "@about_description_3": {
+    "description": "Dritter Absatz der Über-mich-Beschreibung."
+  },
+  "skills_title": "Skills & Tech Stack",
+  "@skills_title": {
+    "description": "Titel für den Skills-Abschnitt."
+  },
+  "skills_subtitle": "Technische Skills",
+  "@skills_subtitle": {
+    "description": "Untertitel für die technischen Skills."
+  },
+  "skills_cat_ui": "UI DEVELOPMENT",
+  "@skills_cat_ui": {
+    "description": "Kategorie für UI-Entwicklungs-Skills."
+  },
+  "skills_cat_mobile": "MOBILE DEVELOPMENT",
+  "@skills_cat_mobile": {
+    "description": "Kategorie für Mobile-Entwicklungs-Skills."
+  },
+  "skills_cat_software": "SOFTWARE DEVELOPMENT",
+  "@skills_cat_software": {
+    "description": "Kategorie für Software-Entwicklungs-Skills."
+  },
+  "projects_title": "Aktuelle Projekte",
+  "@projects_title": {
+    "description": "Titel für den Projekte-Abschnitt."
+  },
+  "projects_brainbench_subtitle": "Multimodales Quiz & Lern-App",
+  "@projects_brainbench_subtitle": {
+    "description": "Untertitel für das Brainbench-Projekt."
+  },
+  "projects_brainbench_description": "Eine mobile Lernplattform mit Quizfunktionen, Kategorien & Themenverwaltung, integrierten Fortschrittssystem und Progress Tracking.",
+  "@projects_brainbench_description": {
+    "description": "Beschreibung des Brainbench-Projekts."
+  },
+  "projects_technologies": "Technologien",
+  "@projects_technologies": {
+    "description": "Label für die Technologien."
+  },
+  "projects_see_more": "Mehr →",
+  "@projects_see_more": {
+    "description": "Text für den 'Mehr'-Button."
+  },
+  "experience_title": "Berufserfahrung",
+  "@experience_title": {
+    "description": "Titel für den Erfahrungs-Abschnitt."
+  },
+  "footer_copyright": "© 2025 Demo Portfolio",
+  "@footer_copyright": {
+    "description": "Copyright-Text für den Footer."
+  },
+  "footer_imprint": "Impressum",
+  "@footer_imprint": {
+    "description": "Impressum-Link im Footer."
+  },
+  "footer_privacy": "Datenschutz",
+  "@footer_privacy": {
+    "description": "Datenschutz-Link im Footer."
+  },
+  "footer_contact": "Kontakt",
+  "@footer_contact": {
+    "description": "Kontakt-Link im Footer."
+  },
+  "home": "Start",
+  "@home": {
+    "description": "Home navigation item"
+  },
+  "portfolio": "Portfolio",
+  "@portfolio": {
+    "description": "Portfolio navigation item"
+  },
+  "languageNav": "Sprache",
+  "@languageNav": {
+    "description": "Language navigation item"
+  },
+  "aboutTitle": "Über mich",
+  "@aboutTitle": {
+    "description": "About section title"
+  },
+  "aboutText1": "Demo-Text für den ersten Absatz der Über-mich-Sektion.",
+  "@aboutText1": {
+    "description": "First about text paragraph"
+  },
+  "aboutText2": "Demo-Text für den zweiten Absatz der Über-mich-Sektion.",
+  "@aboutText2": {
+    "description": "Second about text paragraph"
+  },
+  "aboutText3": "Demo-Text für den dritten Absatz der Über-mich-Sektion.",
+  "@aboutText3": {
+    "description": "Third about text paragraph"
+  },
+  "skillsTitle": "Skills & Tech Stack",
+  "@skillsTitle": {
+    "description": "Skills section title"
+  },
+  "technicalSkills": "Technische Skills",
+  "@technicalSkills": {
+    "description": "Technical skills subtitle"
+  },
+  "uiDevelopment": "UI DEVELOPMENT",
+  "@uiDevelopment": {
+    "description": "UI Development category"
+  },
+  "mobileDevelopmentCategory": "MOBILE DEVELOPMENT",
+  "@mobileDevelopmentCategory": {
+    "description": "Mobile Development category"
+  },
+  "softwareDevelopment": "SOFTWARE DEVELOPMENT",
+  "@softwareDevelopment": {
+    "description": "Software Development category"
+  },
+  "currentProjects": "Aktuelle Projekte",
+  "@currentProjects": {
+    "description": "Current projects title"
+  },
+  "brainbenchTitle": "Demo Quiz & Lern-App",
+  "@brainbenchTitle": {
+    "description": "Demo project title"
+  },
+  "brainbenchDescription": "Eine Demo-Lernplattform mit Beispiel-Funktionen für Demonstrationszwecke.",
+  "@brainbenchDescription": {
+    "description": "Demo project description"
+  },
+  "brainbenchTech": "Technologien: Flutter, Demo-Backend, Beispiel-Services",
+  "@brainbenchTech": {
+    "description": "Demo project technologies"
+  },
+  "experienceTitle": "Berufserfahrung",
+  "@experienceTitle": {
+    "description": "Experience section title"
+  },
+  "crmDeveloper": "Demo-Entwickler",
+  "@crmDeveloper": {
+    "description": "Demo job title"
+  },
+  "crmDescription": "Demo-Beschreibung für Entwicklungstätigkeiten",
+  "@crmDescription": {
+    "description": "Demo job description"
+  },
+  "melitaCompany": "DEMO COMPANY GmbH, DEMO-STADT",
+  "@melitaCompany": {
+    "description": "Demo company info"
+  },
+  "period20182020": "2020 - 2022",
+  "@period20182020": {
+    "description": "Demo work period"
+  },
+  "mobileAppDeveloper": "Mobile App Entwickler",
+  "@mobileAppDeveloper": {
+    "description": "Mobile app developer job title"
+  },
+  "nativeAppDescription": "Demo-Beschreibung für mobile App-Entwicklung",
+  "@nativeAppDescription": {
+    "description": "Demo mobile app description"
+  },
+  "micaboCompany": "DEMO SOLUTIONS GmbH, DEMO-STADT, REMOTE",
+  "@micaboCompany": {
+    "description": "Demo company info"
+  },
+  "period2023": "2023",
+  "@period2023": {
+    "description": "Work period 2023"
+  },
+  "mobileAppDeveloperPM": "App Entwickler & Demo-Management",
+  "@mobileAppDeveloperPM": {
+    "description": "Demo job title with PM"
+  },
+  "startupCompany": "Demo-Startup, Flutter, Design, Management",
+  "@startupCompany": {
+    "description": "Demo startup description"
+  },
+  "period2024": "2024",
+  "@period2024": {
+    "description": "Work period 2024"
+  },
+  "copyrightText": "© 2025 Demo Portfolio",
+  "@copyrightText": {
+    "description": "Copyright text"
+  },
+  "moreArrow": "Mehr →",
+  "@moreArrow": {
+    "description": "More arrow button"
+  },
+  "downloadCV": "Demo CV herunterladen",
+  "@downloadCV": {
+    "description": "Download CV button text"
+  },
+  "contact": "Kontakt",
+  "@contact": {
+    "description": "Contact link"
+  },
+  "imprint": "Impressum",
+  "@imprint": {
+    "description": "Imprint link"
+  },
+  "privacyPolicy": "Datenschutz",
+  "@privacyPolicy": {
+    "description": "Privacy policy link"
+  },
+  "about": "Über mich",
+  "@about": { "description": "About navigation item" },
+  "heroSubtitle": "Demo Mobile App Entwicklerin | Flutter Demo",
+  "@heroSubtitle": { "description": "Hero section subtitle" },
+  "heroDescription": "Demo-Beschreibung für die Entwicklung moderner Apps mit Flutter und Demo-Technologien.",
+  "@heroDescription": { "description": "Hero section description" },
+  "viewPortfolio": "Portfolio ansehen",
+  "@viewPortfolio": { "description": "View portfolio button" },
+  "scrollDown": "Nach unten scrollen",
+  "@scrollDown": { "description": "Scroll down indicator" },
+  "aboutSubtitle": "Leidenschaft für Demo-Lösungen",
+  "@aboutSubtitle": { "description": "About section subtitle" },
+  "aboutDescription": "Demo-Text über die Leidenschaft für elegante Demo-Lösungen und moderne Technologien.",
+  "@aboutDescription": { "description": "About section description" },
+  "yearsExperience": "Jahre Erfahrung",
+  "@yearsExperience": { "description": "Years experience label" },
+  "projectsCompleted": "Abgeschlossene Projekte",
+  "@projectsCompleted": { "description": "Projects completed label" },
+  "happyClients": "Zufriedene Kunden",
+  "@happyClients": { "description": "Happy clients label" },
+  "technologiesUsed": "Verwendete Technologien",
+  "@technologiesUsed": { "description": "Technologies used label" },
+  "skills": "Fähigkeiten",
+  "@skills": { "description": "Skills section title" },
+  "frontend": "Frontend",
+  "@frontend": { "description": "Frontend category" },
+  "backend": "Backend",
+  "@backend": { "description": "Backend category" },
+  "database": "Datenbank",
+  "@database": { "description": "Database category" },
+  "tools": "Werkzeuge",
+  "@tools": { "description": "Tools category" },
+  "portfolioTitle": "Portfolio",
+  "@portfolioTitle": { "description": "Portfolio section title" },
+  "portfolioSubtitle": "Meine Demo-Arbeiten und Projekte",
+  "@portfolioSubtitle": { "description": "Portfolio section subtitle" },
+  "all": "Alle",
+  "@all": { "description": "All filter" },
+  "web": "Web",
+  "@web": { "description": "Web filter" },
+  "mobile": "Mobil",
+  "@mobile": { "description": "Mobile filter" },
+  "uiux": "UI/UX",
+  "@uiux": { "description": "UI/UX filter" },
+  "viewDemo": "Demo ansehen",
+  "@viewDemo": { "description": "View demo button" },
+  "viewCode": "Code ansehen",
+  "@viewCode": { "description": "View code button" },
+  "moreInfo": "Mehr Info",
+  "@moreInfo": { "description": "More info button" },
+  "featured": "Hervorgehoben",
+  "@featured": { "description": "Featured badge" },
+  "contactTitle": "Kontakt aufnehmen",
+  "@contactTitle": { "description": "Contact section title" },
+  "contactSubtitle": "Demo-Kontaktbereich",
+  "@contactSubtitle": { "description": "Contact section subtitle" },
+  "contactDescription": "Demo-Beschreibung für den Kontaktbereich.",
+  "@contactDescription": { "description": "Contact section description" },
+  "name": "Name",
+  "@name": { "description": "Name field label" },
+  "email": "E-Mail",
+  "@email": { "description": "Email field label" },
+  "subject": "Betreff",
+  "@subject": { "description": "Subject field label" },
+  "message": "Nachricht",
+  "@message": { "description": "Message field label" },
+  "sendMessage": "Nachricht senden",
+  "@sendMessage": { "description": "Send message button" },
+  "sending": "Wird gesendet...",
+  "@sending": { "description": "Sending state" },
+  "messageSent": "Demo-Nachricht erfolgreich gesendet!",
+  "@messageSent": { "description": "Message sent success" },
+  "messageFailed": "Demo-Nachricht konnte nicht gesendet werden.",
+  "@messageFailed": { "description": "Message failed error" },
+  "fieldRequired": "Dieses Feld ist erforderlich",
+  "@fieldRequired": { "description": "Required field validation" },
+  "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+  "@invalidEmail": { "description": "Invalid email validation" },
+  "messageTooShort": "Die Nachricht muss mindestens 10 Zeichen lang sein",
+  "@messageTooShort": { "description": "Message too short validation" },
+  "footerText": "© 2025 Demo Portfolio. Alle Rechte vorbehalten.",
+  "@footerText": { "description": "Footer copyright text" },
+  "followMe": "Folgen Sie mir",
+  "@followMe": { "description": "Follow me label" },
+  "github": "GitHub",
+  "@github": { "description": "GitHub social link" },
+  "linkedin": "LinkedIn",
+  "@linkedin": { "description": "LinkedIn social link" },
+  "twitter": "Twitter",
+  "@twitter": { "description": "Twitter social link" },
+  "instagram": "Instagram",
+  "@instagram": { "description": "Instagram social link" },
+  "servicesTitle": "Dienstleistungen",
+  "@servicesTitle": { "description": "Services section title" },
+  "webDevelopment": "Webentwicklung",
+  "@webDevelopment": { "description": "Web development service" },
+  "webDevelopmentDesc": "Demo-Beschreibung für Webentwicklungsdienstleistungen.",
+  "@webDevelopmentDesc": { "description": "Web development description" },
+  "mobileDevelopment": "Mobile Entwicklung",
+  "@mobileDevelopment": { "description": "Mobile development service" },
+  "mobileDevelopmentDesc": "Demo-Beschreibung für mobile Entwicklungsdienstleistungen.",
+  "@mobileDevelopmentDesc": { "description": "Mobile development description" },
+  "uiuxDesign": "UI/UX Design",
+  "@uiuxDesign": { "description": "UI/UX design service" },
+  "uiuxDesignDesc": "Demo-Beschreibung für UI/UX Design-Dienstleistungen.",
+  "@uiuxDesignDesc": { "description": "UI/UX design description" },
+  "consulting": "Technische Beratung",
+  "@consulting": { "description": "Consulting service" },
+  "consultingDesc": "Demo-Beschreibung für technische Beratungsdienstleistungen.",
+  "@consultingDesc": { "description": "Consulting description" },
+  "testimonialsTitle": "Was Demo-Kunden sagen",
+  "@testimonialsTitle": { "description": "Testimonials section title" },
+  "testimonialsSubtitle": "Demo-Feedback von Demo-Kunden",
+  "@testimonialsSubtitle": { "description": "Testimonials section subtitle" },
+  "loading": "Wird geladen...",
+  "@loading": { "description": "Loading text" },
+  "error": "Demo-Fehler aufgetreten",
+  "@error": { "description": "Error message" },
+  "retry": "Erneut versuchen",
+  "@retry": { "description": "Retry button" },
+  "learnMore": "Mehr erfahren",
+  "@learnMore": { "description": "Learn more button" },
+  "viewAll": "Alle anzeigen",
+  "@viewAll": { "description": "View all button" },
+  "close": "Schließen",
+  "@close": { "description": "Close button" },
+  "back": "Zurück",
+  "@back": { "description": "Back button" },
+  "next": "Weiter",
+  "@next": { "description": "Next button" },
+  "previous": "Vorherige",
+  "@previous": { "description": "Previous button" },
+  "heroName": "Ich bin Demo",
+  "@heroName": { "description": "Hero section name" },
+  "heroLastName": "Portfolio",
+  "@heroLastName": { "description": "Hero section last name" },
+  "heroProfessionPart1": "DEMO ",
+  "@heroProfessionPart1": { "description": "Hero profession part 1" },
+  "heroProfessionPart2": "MOBILE APP ",
+  "@heroProfessionPart2": { "description": "Hero profession part 2" },
+  "heroProfessionPart3": "ENTWICKLER",
+  "@heroProfessionPart3": { "description": "Hero profession part 3" },
+  "moreButton": "Demo Mehr…",
+  "@moreButton": { "description": "More button text" }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/core/theme/app_theme.dart';
 import 'package:portfolio_site/features/home/widgets/section_container.dart';
+import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 
 class ExperienceSection extends StatelessWidget {
   const ExperienceSection({super.key});
@@ -9,29 +10,31 @@ class ExperienceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return SectionContainer(
-      title: 'Berufserfahrung',
+      title: l10n.experienceTitle,
       content: Column(
         children: [
           _experienceItem(
-            title: 'CRM-Entwicklerin',
-            subtitle: 'Entwicklung von Dynamics 365 Plugins in C#',
-            company: 'MELITA PORTAL SERVICES GmbH, BREMEN',
-            period: '2018 - 2020',
+            title: l10n.crmDeveloper,
+            subtitle: l10n.crmDescription,
+            company: l10n.melitaCompany,
+            period: l10n.period20182020,
           ),
           const SizedBox(height: 16),
           _experienceItem(
-            title: 'Mobile App Entwicklerin',
-            subtitle: 'Native App-Entwicklung für Android und iOS',
-            company: 'MICABO GMBH SOLUTIONS GmbH, ESSEN, REMOTE',
-            period: '2023',
+            title: l10n.mobileAppDeveloper,
+            subtitle: l10n.nativeAppDescription,
+            company: l10n.micaboCompany,
+            period: l10n.period2023,
           ),
           const SizedBox(height: 16),
           _experienceItem(
-            title: 'Mobile App Entwicklerin & Projektmanagement',
+            title: l10n.mobileAppDeveloperPM,
             subtitle: '',
-            company: 'Start-up, Flutter, Design, Projektmanagement',
-            period: '2024',
+            company: l10n.startupCompany,
+            period: l10n.period2024,
           ),
         ],
       ),

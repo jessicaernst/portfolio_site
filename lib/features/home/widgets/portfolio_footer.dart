@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 
 class PortfolioFooter extends StatelessWidget {
   final bool isDark;
@@ -6,6 +7,7 @@ class PortfolioFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final textColor = isDark ? Colors.white54 : Colors.black54;
 
     return Container(
@@ -13,36 +15,27 @@ class PortfolioFooter extends StatelessWidget {
       child: Row(
         children: [
           const SizedBox(width: 28),
-          Text(
-            '© 2025 Jessica Ernst',
-            style: TextStyle(color: textColor),
-          ),
+          Text(l10n.copyrightText, style: TextStyle(color: textColor)),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
                   onPressed: () {},
+                  child: Text(l10n.imprint, style: TextStyle(color: textColor)),
+                ),
+                const SizedBox(width: 32),
+                TextButton(
+                  onPressed: () {},
                   child: Text(
-                    'Impressum',
+                    l10n.privacyPolicy,
                     style: TextStyle(color: textColor),
                   ),
                 ),
                 const SizedBox(width: 32),
                 TextButton(
                   onPressed: () {},
-                  child: Text(
-                    'Datenschutz',
-                    style: TextStyle(color: textColor),
-                  ),
-                ),
-                const SizedBox(width: 32),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Kontakt',
-                    style: TextStyle(color: textColor),
-                  ),
+                  child: Text(l10n.contact, style: TextStyle(color: textColor)),
                 ),
               ],
             ),

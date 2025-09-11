@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/core/theme/app_theme.dart';
 import 'package:portfolio_site/features/home/widgets/section_container.dart';
+import 'package:portfolio_site/l10n/gen/app_localizations.dart';
 
 class SkillsSection extends StatelessWidget {
   final bool isDark;
@@ -10,16 +11,17 @@ class SkillsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final subTitleColor = isDark ? Colors.white.withAlpha(180) : Colors.black54;
 
     return SectionContainer(
       isDark: isDark,
-      title: 'Skills & Tech Stack',
+      title: l10n.skillsTitle,
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Technische Skills',
+            l10n.technicalSkills,
             style: TextStyle(color: subTitleColor, fontSize: 14),
           ),
           const SizedBox(height: 20),
@@ -27,19 +29,19 @@ class SkillsSection extends StatelessWidget {
             spacing: 20,
             runSpacing: 20,
             children: [
-              _skillBox(context, 'UI DEVELOPMENT', [
+              _skillBox(context, l10n.uiDevelopment, [
                 ['Swift', 4],
                 ['SwiftUI', 4],
                 ['UI Kit', 3],
                 ['Core Data', 3],
               ]),
-              _skillBox(context, 'MOBILE DEVELOPMENT', [
+              _skillBox(context, l10n.mobileDevelopmentCategory, [
                 ['Kotlin', 3],
                 ['Jetpack Compose', 3],
                 ['Android XML View', 3],
                 ['Android Room DB', 3],
               ]),
-              _skillBox(context, 'SOFTWARE DEVELOPMENT', [
+              _skillBox(context, l10n.softwareDevelopment, [
                 ['Flutter', 4],
                 ['Java', 3],
                 ['Git', 4],
