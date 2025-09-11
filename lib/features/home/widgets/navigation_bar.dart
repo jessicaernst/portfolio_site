@@ -28,8 +28,8 @@ class PortfolioNavigationBar extends ConsumerStatefulWidget {
       _PortfolioNavigationBarState();
 }
 
-class _PortfolioNavigationBarState
-    extends ConsumerState<PortfolioNavigationBar> {
+class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar>
+    with WidgetsBindingObserver {
   bool _isToggling = false;
 
   final ScrollController _scrollController = ScrollController();
@@ -43,13 +43,23 @@ class _PortfolioNavigationBarState
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => _updateArrowVisibility(),
     );
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _scrollController.removeListener(_updateArrowVisibility);
     _scrollController.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeMetrics() {
+    super.didChangeMetrics();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => _updateArrowVisibility(),
+    );
   }
 
   void _updateArrowVisibility() {
