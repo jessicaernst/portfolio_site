@@ -218,8 +218,10 @@ class _PortfolioNavigationBarState
     double verticalPad = 8.0,
     bool isSelected = false,
   }) {
-    final selectedColor = const Color(0xFF9CC5D3).withOpacity(0.18);
-    final selectedTextColor = const Color(0xFF9CC5D3);
+    final selectedColor = AppTheme.highlightBlue.withAlpha(
+      AppTheme.alpha(0.18),
+    );
+    final selectedTextColor = AppTheme.highlightBlue;
     return Container(
       decoration: BoxDecoration(
         borderRadius: AppTheme.borderRadiusSmall,

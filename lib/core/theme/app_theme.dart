@@ -15,6 +15,7 @@ library;
 import 'package:flutter/material.dart';
 
 class AppTheme {
+  static const Color highlightBlue = Color(0xFF9CC5D3);
   // BorderRadius
   static const double radiusSmall = 8;
   static const double radiusMedium = 12;
