@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/features/home/widgets/about_section.dart';
-import 'package:portfolio_site/features/home/widgets/animated_background.dart';
+import 'package:portfolio_site/core/widgets/animated_background.dart';
 import 'package:portfolio_site/features/home/widgets/experience_section.dart';
 import 'package:portfolio_site/features/home/widgets/hero_section.dart';
 import 'package:portfolio_site/features/home/widgets/navigation_bar.dart';

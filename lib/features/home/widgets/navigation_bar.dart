@@ -12,8 +12,11 @@ class PortfolioNavigationBar extends ConsumerStatefulWidget {
   ConsumerState<PortfolioNavigationBar> createState() => _PortfolioNavigationBarState();
 }
 
+enum NavigationItem { home, portfolio }
+
 class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar> {
   bool _isToggling = false;
+  NavigationItem _activeItem = NavigationItem.home; // Default to home
 
   int _alpha(double v) => (v * 255).toInt();
 
@@ -37,9 +40,17 @@ class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar>
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _navItem(l10n.home, null),
+                _navItem(
+                  l10n.home, 
+                  NavigationItem.home,
+                  () => setState(() => _activeItem = NavigationItem.home),
+                ),
                 const SizedBox(width: 24),
-                _navItem(l10n.portfolio, null),
+                _navItem(
+                  l10n.portfolio, 
+                  NavigationItem.portfolio,
+                  () => setState(() => _activeItem = NavigationItem.portfolio),
+                ),
                 const SizedBox(width: 24),
                 _languageSwitch(currentLocale, localeNotifier),
               ],
@@ -50,12 +61,39 @@ class _PortfolioNavigationBarState extends ConsumerState<PortfolioNavigationBar>
     );
   }
 
-  Widget _navItem(String text, VoidCallback? onPressed) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(
-        text,
-        style: const TextStyle(color: Colors.white, fontSize: 16),
+  Widget _navItem(String text, NavigationItem item, VoidCallback? onPressed) {
+    final isActive = _activeItem == item;
+    
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: isActive 
+          ? Colors.lightBlue[100]?.withAlpha((0.2 * 255).toInt())
+          : Colors.transparent,
+        border: isActive
+          ? Border.all(
+              color: Colors.lightBlue[100]?.withAlpha((0.4 * 255).toInt()) ?? Colors.transparent,
+              width: 1,
+            )
+          : null,
+      ),
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          minimumSize: Size.zero,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: isActive 
+              ? Colors.lightBlue[100] 
+              : Colors.white,
+            fontSize: 16,
+            fontWeight: isActive ? FontWeight.w600 : FontWeight.normal,
+          ),
+        ),
       ),
     );
   }

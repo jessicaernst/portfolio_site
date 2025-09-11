@@ -47,18 +47,14 @@ class AnimatedBackgroundState extends State<AnimatedBackground>
             gradient: LinearGradient(
               begin: Alignment(-0.9, -0.6),
               end: Alignment(1.0, 0.8),
-              colors: [
-                Color(0xFF2B5C64),
-                Color(0xFF335C6A),
-                Color(0xFF8A6B53),
-              ],
+              colors: [Color(0xFF2B5C64), Color(0xFF335C6A), Color(0xFF8A6B53)],
             ),
           ),
         ),
         Positioned(
-          top: 120, // Direkt unter der Navbar (72px + 48px spacing)
-          left: -mq.size.width * 0.05, // Links angeschnitten
-          right: -mq.size.width * 0.05, // Rechts angeschnitten
+          top: 120,
+          left: -mq.size.width * 0.05,
+          right: -mq.size.width * 0.05,
           child: IgnorePointer(
             child: Center(
               child: Opacity(
@@ -66,7 +62,6 @@ class AnimatedBackgroundState extends State<AnimatedBackground>
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    // Haupttext ohne "i" Punkt
                     Text(
                       'APPDEV',
                       style: TextStyle(
@@ -78,16 +73,20 @@ class AnimatedBackgroundState extends State<AnimatedBackground>
                         color: Colors.white,
                       ),
                     ),
-                    // Switch Button als "i" Punkt
+
                     Positioned(
-                      right: mq.size.width * 0.18, // Position über dem "i"
+                      right: mq.size.width * 0.18,
                       top: -mq.size.width * 0.04,
                       child: Container(
                         width: mq.size.width * 0.035,
                         height: mq.size.width * 0.018,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(mq.size.width * 0.009),
-                          color: Colors.lightBlue[100]?.withAlpha((0.8 * 255).toInt()),
+                          borderRadius: BorderRadius.circular(
+                            mq.size.width * 0.009,
+                          ),
+                          color: Colors.lightBlue[100]?.withAlpha(
+                            (0.8 * 255).toInt(),
+                          ),
                           border: Border.all(
                             color: Colors.white.withAlpha((0.4 * 255).toInt()),
                             width: 1.5,
@@ -104,7 +103,9 @@ class AnimatedBackgroundState extends State<AnimatedBackground>
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withAlpha((0.15 * 255).toInt()),
+                                  color: Colors.black.withAlpha(
+                                    (0.15 * 255).toInt(),
+                                  ),
                                   blurRadius: 3,
                                   offset: const Offset(0, 1),
                                 ),
