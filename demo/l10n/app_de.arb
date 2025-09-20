@@ -245,149 +245,293 @@
     "description": "Privacy policy link"
   },
   "about": "Über mich",
-  "@about": { "description": "About navigation item" },
+  "@about": {
+    "description": "About navigation item"
+  },
   "heroSubtitle": "Demo Mobile App Entwicklerin | Flutter Demo",
-  "@heroSubtitle": { "description": "Hero section subtitle" },
+  "@heroSubtitle": {
+    "description": "Hero section subtitle"
+  },
   "heroDescription": "Demo-Beschreibung für die Entwicklung moderner Apps mit Flutter und Demo-Technologien.",
-  "@heroDescription": { "description": "Hero section description" },
+  "@heroDescription": {
+    "description": "Hero section description"
+  },
   "viewPortfolio": "Portfolio ansehen",
-  "@viewPortfolio": { "description": "View portfolio button" },
+  "@viewPortfolio": {
+    "description": "View portfolio button"
+  },
   "scrollDown": "Nach unten scrollen",
-  "@scrollDown": { "description": "Scroll down indicator" },
+  "@scrollDown": {
+    "description": "Scroll down indicator"
+  },
   "aboutSubtitle": "Leidenschaft für Demo-Lösungen",
-  "@aboutSubtitle": { "description": "About section subtitle" },
+  "@aboutSubtitle": {
+    "description": "About section subtitle"
+  },
   "aboutDescription": "Demo-Text über die Leidenschaft für elegante Demo-Lösungen und moderne Technologien.",
-  "@aboutDescription": { "description": "About section description" },
+  "@aboutDescription": {
+    "description": "About section description"
+  },
   "yearsExperience": "Jahre Erfahrung",
-  "@yearsExperience": { "description": "Years experience label" },
+  "@yearsExperience": {
+    "description": "Years experience label"
+  },
   "projectsCompleted": "Abgeschlossene Projekte",
-  "@projectsCompleted": { "description": "Projects completed label" },
+  "@projectsCompleted": {
+    "description": "Projects completed label"
+  },
   "happyClients": "Zufriedene Kunden",
-  "@happyClients": { "description": "Happy clients label" },
+  "@happyClients": {
+    "description": "Happy clients label"
+  },
   "technologiesUsed": "Verwendete Technologien",
-  "@technologiesUsed": { "description": "Technologies used label" },
+  "@technologiesUsed": {
+    "description": "Technologies used label"
+  },
   "skills": "Fähigkeiten",
-  "@skills": { "description": "Skills section title" },
+  "@skills": {
+    "description": "Skills section title"
+  },
   "frontend": "Frontend",
-  "@frontend": { "description": "Frontend category" },
+  "@frontend": {
+    "description": "Frontend category"
+  },
   "backend": "Backend",
-  "@backend": { "description": "Backend category" },
+  "@backend": {
+    "description": "Backend category"
+  },
   "database": "Datenbank",
-  "@database": { "description": "Database category" },
+  "@database": {
+    "description": "Database category"
+  },
   "tools": "Werkzeuge",
-  "@tools": { "description": "Tools category" },
+  "@tools": {
+    "description": "Tools category"
+  },
   "portfolioTitle": "Portfolio",
-  "@portfolioTitle": { "description": "Portfolio section title" },
+  "@portfolioTitle": {
+    "description": "Portfolio section title"
+  },
   "portfolioSubtitle": "Meine Demo-Arbeiten und Projekte",
-  "@portfolioSubtitle": { "description": "Portfolio section subtitle" },
+  "@portfolioSubtitle": {
+    "description": "Portfolio section subtitle"
+  },
   "all": "Alle",
-  "@all": { "description": "All filter" },
+  "@all": {
+    "description": "All filter"
+  },
   "web": "Web",
-  "@web": { "description": "Web filter" },
+  "@web": {
+    "description": "Web filter"
+  },
   "mobile": "Mobil",
-  "@mobile": { "description": "Mobile filter" },
+  "@mobile": {
+    "description": "Mobile filter"
+  },
   "uiux": "UI/UX",
-  "@uiux": { "description": "UI/UX filter" },
+  "@uiux": {
+    "description": "UI/UX filter"
+  },
   "viewDemo": "Demo ansehen",
-  "@viewDemo": { "description": "View demo button" },
+  "@viewDemo": {
+    "description": "View demo button"
+  },
   "viewCode": "Code ansehen",
-  "@viewCode": { "description": "View code button" },
+  "@viewCode": {
+    "description": "View code button"
+  },
   "moreInfo": "Mehr Info",
-  "@moreInfo": { "description": "More info button" },
+  "@moreInfo": {
+    "description": "More info button"
+  },
   "featured": "Hervorgehoben",
-  "@featured": { "description": "Featured badge" },
+  "@featured": {
+    "description": "Featured badge"
+  },
   "contactTitle": "Kontakt aufnehmen",
-  "@contactTitle": { "description": "Contact section title" },
+  "@contactTitle": {
+    "description": "Contact section title"
+  },
   "contactSubtitle": "Demo-Kontaktbereich",
-  "@contactSubtitle": { "description": "Contact section subtitle" },
+  "@contactSubtitle": {
+    "description": "Contact section subtitle"
+  },
   "contactDescription": "Demo-Beschreibung für den Kontaktbereich.",
-  "@contactDescription": { "description": "Contact section description" },
+  "@contactDescription": {
+    "description": "Contact section description"
+  },
   "name": "Name",
-  "@name": { "description": "Name field label" },
+  "@name": {
+    "description": "Name field label"
+  },
   "email": "E-Mail",
-  "@email": { "description": "Email field label" },
+  "@email": {
+    "description": "Email field label"
+  },
   "subject": "Betreff",
-  "@subject": { "description": "Subject field label" },
+  "@subject": {
+    "description": "Subject field label"
+  },
   "message": "Nachricht",
-  "@message": { "description": "Message field label" },
+  "@message": {
+    "description": "Message field label"
+  },
   "sendMessage": "Nachricht senden",
-  "@sendMessage": { "description": "Send message button" },
+  "@sendMessage": {
+    "description": "Send message button"
+  },
   "sending": "Wird gesendet...",
-  "@sending": { "description": "Sending state" },
+  "@sending": {
+    "description": "Sending state"
+  },
   "messageSent": "Demo-Nachricht erfolgreich gesendet!",
-  "@messageSent": { "description": "Message sent success" },
+  "@messageSent": {
+    "description": "Message sent success"
+  },
   "messageFailed": "Demo-Nachricht konnte nicht gesendet werden.",
-  "@messageFailed": { "description": "Message failed error" },
+  "@messageFailed": {
+    "description": "Message failed error"
+  },
   "fieldRequired": "Dieses Feld ist erforderlich",
-  "@fieldRequired": { "description": "Required field validation" },
+  "@fieldRequired": {
+    "description": "Required field validation"
+  },
   "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-  "@invalidEmail": { "description": "Invalid email validation" },
+  "@invalidEmail": {
+    "description": "Invalid email validation"
+  },
   "messageTooShort": "Die Nachricht muss mindestens 10 Zeichen lang sein",
-  "@messageTooShort": { "description": "Message too short validation" },
+  "@messageTooShort": {
+    "description": "Message too short validation"
+  },
   "footerText": "© 2025 Demo Portfolio. Alle Rechte vorbehalten.",
-  "@footerText": { "description": "Footer copyright text" },
+  "@footerText": {
+    "description": "Footer copyright text"
+  },
   "followMe": "Folgen Sie mir",
-  "@followMe": { "description": "Follow me label" },
+  "@followMe": {
+    "description": "Follow me label"
+  },
   "github": "GitHub",
-  "@github": { "description": "GitHub social link" },
+  "@github": {
+    "description": "GitHub social link"
+  },
   "linkedin": "LinkedIn",
-  "@linkedin": { "description": "LinkedIn social link" },
+  "@linkedin": {
+    "description": "LinkedIn social link"
+  },
   "twitter": "Twitter",
-  "@twitter": { "description": "Twitter social link" },
+  "@twitter": {
+    "description": "Twitter social link"
+  },
   "instagram": "Instagram",
-  "@instagram": { "description": "Instagram social link" },
+  "@instagram": {
+    "description": "Instagram social link"
+  },
   "servicesTitle": "Dienstleistungen",
-  "@servicesTitle": { "description": "Services section title" },
+  "@servicesTitle": {
+    "description": "Services section title"
+  },
   "webDevelopment": "Webentwicklung",
-  "@webDevelopment": { "description": "Web development service" },
+  "@webDevelopment": {
+    "description": "Web development service"
+  },
   "webDevelopmentDesc": "Demo-Beschreibung für Webentwicklungsdienstleistungen.",
-  "@webDevelopmentDesc": { "description": "Web development description" },
+  "@webDevelopmentDesc": {
+    "description": "Web development description"
+  },
   "mobileDevelopment": "Mobile Entwicklung",
-  "@mobileDevelopment": { "description": "Mobile development service" },
+  "@mobileDevelopment": {
+    "description": "Mobile development service"
+  },
   "mobileDevelopmentDesc": "Demo-Beschreibung für mobile Entwicklungsdienstleistungen.",
-  "@mobileDevelopmentDesc": { "description": "Mobile development description" },
+  "@mobileDevelopmentDesc": {
+    "description": "Mobile development description"
+  },
   "uiuxDesign": "UI/UX Design",
-  "@uiuxDesign": { "description": "UI/UX design service" },
+  "@uiuxDesign": {
+    "description": "UI/UX design service"
+  },
   "uiuxDesignDesc": "Demo-Beschreibung für UI/UX Design-Dienstleistungen.",
-  "@uiuxDesignDesc": { "description": "UI/UX design description" },
+  "@uiuxDesignDesc": {
+    "description": "UI/UX design description"
+  },
   "consulting": "Technische Beratung",
-  "@consulting": { "description": "Consulting service" },
+  "@consulting": {
+    "description": "Consulting service"
+  },
   "consultingDesc": "Demo-Beschreibung für technische Beratungsdienstleistungen.",
-  "@consultingDesc": { "description": "Consulting description" },
+  "@consultingDesc": {
+    "description": "Consulting description"
+  },
   "testimonialsTitle": "Was Demo-Kunden sagen",
-  "@testimonialsTitle": { "description": "Testimonials section title" },
+  "@testimonialsTitle": {
+    "description": "Testimonials section title"
+  },
   "testimonialsSubtitle": "Demo-Feedback von Demo-Kunden",
-  "@testimonialsSubtitle": { "description": "Testimonials section subtitle" },
+  "@testimonialsSubtitle": {
+    "description": "Testimonials section subtitle"
+  },
   "loading": "Wird geladen...",
-  "@loading": { "description": "Loading text" },
+  "@loading": {
+    "description": "Loading text"
+  },
   "error": "Demo-Fehler aufgetreten",
-  "@error": { "description": "Error message" },
+  "@error": {
+    "description": "Error message"
+  },
   "retry": "Erneut versuchen",
-  "@retry": { "description": "Retry button" },
+  "@retry": {
+    "description": "Retry button"
+  },
   "learnMore": "Mehr erfahren",
-  "@learnMore": { "description": "Learn more button" },
+  "@learnMore": {
+    "description": "Learn more button"
+  },
   "viewAll": "Alle anzeigen",
-  "@viewAll": { "description": "View all button" },
+  "@viewAll": {
+    "description": "View all button"
+  },
   "close": "Schließen",
-  "@close": { "description": "Close button" },
+  "@close": {
+    "description": "Close button"
+  },
   "back": "Zurück",
-  "@back": { "description": "Back button" },
+  "@back": {
+    "description": "Back button"
+  },
   "next": "Weiter",
-  "@next": { "description": "Next button" },
+  "@next": {
+    "description": "Next button"
+  },
   "previous": "Vorherige",
-  "@previous": { "description": "Previous button" },
+  "@previous": {
+    "description": "Previous button"
+  },
   "heroName": "Ich bin Demo",
-  "@heroName": { "description": "Hero section name" },
+  "@heroName": {
+    "description": "Hero section name"
+  },
   "heroLastName": "Portfolio",
-  "@heroLastName": { "description": "Hero section last name" },
+  "@heroLastName": {
+    "description": "Hero section last name"
+  },
   "heroProfessionPart1": "DEMO ",
-  "@heroProfessionPart1": { "description": "Hero profession part 1" },
+  "@heroProfessionPart1": {
+    "description": "Hero profession part 1"
+  },
   "heroProfessionPart2": "MOBILE APP ",
-  "@heroProfessionPart2": { "description": "Hero profession part 2" },
+  "@heroProfessionPart2": {
+    "description": "Hero profession part 2"
+  },
   "heroProfessionPart3": "ENTWICKLER",
-  "@heroProfessionPart3": { "description": "Hero profession part 3" },
+  "@heroProfessionPart3": {
+    "description": "Hero profession part 3"
+  },
   "moreButton": "Demo Mehr…",
-  "@moreButton": { "description": "More button text" },
+  "@moreButton": {
+    "description": "More button text"
+  },
   "bestPracticesTitle": "Best Practices & Design (Demo)",
   "@bestPracticesTitle": {
     "description": "Demo-Titel für Best Practices & Design."
