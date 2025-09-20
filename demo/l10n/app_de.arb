@@ -387,5 +387,33 @@
   "heroProfessionPart3": "ENTWICKLER",
   "@heroProfessionPart3": { "description": "Hero profession part 3" },
   "moreButton": "Demo Mehr…",
-  "@moreButton": { "description": "More button text" }
+  "@moreButton": { "description": "More button text" },
+  "bestPracticesTitle": "Best Practices & Design (Demo)",
+  "@bestPracticesTitle": {
+    "description": "Demo-Titel für Best Practices & Design."
+  },
+  "cleancode": "Cleancode (Demo)",
+  "@cleancode": {
+    "description": "Demo-Punkt für Cleancode."
+  },
+  "cleanArchitecture": "Clean Architecture (Demo)",
+  "@cleanArchitecture": {
+    "description": "Demo-Punkt für Clean Architecture."
+  },
+  "scrumAgile": "Scrum/Agile (Demo)",
+  "@scrumAgile": {
+    "description": "Demo-Punkt für Scrum/Agile."
+  },
+  "uxUiDesign": "UX/UI Design (Demo)",
+  "@uxUiDesign": {
+    "description": "Demo-Punkt für UX/UI Design."
+  },
+  "downloadCVInfo": "Für mehr Demo-Informationen laden Sie gerne den Demo-CV herunter.",
+  "@downloadCVInfo": {
+    "description": "Demo-Info-Text über dem Download-CV-Button."
+  },
+  "crossoverDevelopment": "Cross-Plattform Entwicklung (Demo)",
+  "@crossoverDevelopment": {
+    "description": "Demo-Label für Cross-Plattform Entwicklung."
+  }
 }
