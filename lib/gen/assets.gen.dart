@@ -24,30 +24,6 @@ class $AssetsImagesGen {
   /// File path: assets/images/contact.png
   AssetGenImage get contact => const AssetGenImage('assets/images/contact.png');
 
-  /// File path: assets/images/experience_img_desktop.png
-  AssetGenImage get experienceImgDesktop =>
-      const AssetGenImage('assets/images/experience_img_desktop.png');
-
-  /// File path: assets/images/experience_img_mobile.png
-  AssetGenImage get experienceImgMobile =>
-      const AssetGenImage('assets/images/experience_img_mobile.png');
-
-  /// File path: assets/images/experience_img_tablet.png
-  AssetGenImage get experienceImgTablet =>
-      const AssetGenImage('assets/images/experience_img_tablet.png');
-
-  /// File path: assets/images/header_img_desktop.png
-  AssetGenImage get headerImgDesktop =>
-      const AssetGenImage('assets/images/header_img_desktop.png');
-
-  /// File path: assets/images/header_img_mobile.png
-  AssetGenImage get headerImgMobile =>
-      const AssetGenImage('assets/images/header_img_mobile.png');
-
-  /// File path: assets/images/header_img_tablet.png
-  AssetGenImage get headerImgTablet =>
-      const AssetGenImage('assets/images/header_img_tablet.png');
-
   /// File path: assets/images/header_text_desktop_de.png
   AssetGenImage get headerTextDesktopDe =>
       const AssetGenImage('assets/images/header_text_desktop_de.png');
@@ -89,12 +65,6 @@ class $AssetsImagesGen {
     github,
     linkedin,
     contact,
-    experienceImgDesktop,
-    experienceImgMobile,
-    experienceImgTablet,
-    headerImgDesktop,
-    headerImgMobile,
-    headerImgTablet,
     headerTextDesktopDe,
     headerTextDesktopEn,
     headerTextMobileDe,

@@ -6,11 +6,53 @@ part of 'locale_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+/// A [Riverpod] notifier that manages the application's locale state.
+///
+/// This notifier determines the initial locale based on the system's locale,
+/// defaulting to German (`'de'`) if the system locale is not supported.
+/// It provides methods to set the locale, toggle between German and English,
+/// and retrieve information about the current language.
+///
+/// - [build]: Initializes the locale based on the system's locale, with a fallback to German.
+/// - [setLocale]: Updates the locale to a new value.
+/// - [toggleLanguage]: Switches the locale between German and English.
+/// - [isGerman]: Returns `true` if the current locale is German.
+/// - [isEnglish]: Returns `true` if the current locale is English.
+/// - [currentLanguageCode]: Returns the current language code as a string.
+/// - [currentLanguageName]: Returns the display name of the current language.
 @ProviderFor(LocaleNotifier)
 const localeNotifierProvider = LocaleNotifierProvider._();
 
+/// A [Riverpod] notifier that manages the application's locale state.
+///
+/// This notifier determines the initial locale based on the system's locale,
+/// defaulting to German (`'de'`) if the system locale is not supported.
+/// It provides methods to set the locale, toggle between German and English,
+/// and retrieve information about the current language.
+///
+/// - [build]: Initializes the locale based on the system's locale, with a fallback to German.
+/// - [setLocale]: Updates the locale to a new value.
+/// - [toggleLanguage]: Switches the locale between German and English.
+/// - [isGerman]: Returns `true` if the current locale is German.
+/// - [isEnglish]: Returns `true` if the current locale is English.
+/// - [currentLanguageCode]: Returns the current language code as a string.
+/// - [currentLanguageName]: Returns the display name of the current language.
 final class LocaleNotifierProvider
     extends $NotifierProvider<LocaleNotifier, Locale> {
+  /// A [Riverpod] notifier that manages the application's locale state.
+  ///
+  /// This notifier determines the initial locale based on the system's locale,
+  /// defaulting to German (`'de'`) if the system locale is not supported.
+  /// It provides methods to set the locale, toggle between German and English,
+  /// and retrieve information about the current language.
+  ///
+  /// - [build]: Initializes the locale based on the system's locale, with a fallback to German.
+  /// - [setLocale]: Updates the locale to a new value.
+  /// - [toggleLanguage]: Switches the locale between German and English.
+  /// - [isGerman]: Returns `true` if the current locale is German.
+  /// - [isEnglish]: Returns `true` if the current locale is English.
+  /// - [currentLanguageCode]: Returns the current language code as a string.
+  /// - [currentLanguageName]: Returns the display name of the current language.
   const LocaleNotifierProvider._()
     : super(
         from: null,
