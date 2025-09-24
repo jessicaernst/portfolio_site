@@ -3,7 +3,7 @@ import 'package:portfolio_site/core/widgets/animated_background.dart';
 import 'package:portfolio_site/features/home/widgets/about_section.dart';
 import 'package:portfolio_site/features/home/widgets/experience_section.dart';
 import 'package:portfolio_site/features/home/widgets/hero_section.dart';
-import 'package:portfolio_site/features/home/widgets/navigation_bar.dart';
+import 'package:portfolio_site/features/home/widgets/navigation/navigation_bar.dart';
 import 'package:portfolio_site/features/home/widgets/portfolio_footer.dart';
 import 'package:portfolio_site/features/home/widgets/projects_section.dart';
 import 'package:portfolio_site/features/home/widgets/skills_section.dart';
