@@ -1,8 +1,17 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/business_logic/local/locale_provider.dart';
 import 'package:portfolio_site/core/theme/app_theme.dart';
 
+/// A widget that displays a language switch button, allowing users to toggle between locales.
+///
+/// Displays an icon and optionally the current language code. Shows a loading indicator when toggling.
+///
+/// - [currentLocale]: The currently selected locale.
+/// - [localeNotifier]: The notifier used to update the locale.
+/// - [iconOnly]: If true, only the language icon is shown.
+/// - [isToggling]: If true, disables the button and shows a loading indicator.
+/// - [showArrow]: If true, shows the language code next to the icon.
+/// - [onToggle]: Callback invoked when the button is pressed to toggle the language.
 class LanguageSwitch extends StatelessWidget {
   final Locale currentLocale;
   final LocaleNotifier localeNotifier;

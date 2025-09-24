@@ -1,7 +1,13 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/core/theme/app_theme.dart';
 
+/// A custom navigation arrow button widget.
+///
+/// Displays either a left or right arrow icon based on the [left] parameter.
+/// The button is wrapped in a transparent [Material] and uses [InkWell] for tap effects.
+///
+/// - [left]: If true, shows a left arrow; otherwise, shows a right arrow.
+/// - [onTap]: Callback triggered when the button is tapped.
 class NavArrowButton extends StatelessWidget {
   final bool left;
   final VoidCallback onTap;

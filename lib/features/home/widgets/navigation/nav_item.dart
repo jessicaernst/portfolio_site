@@ -1,7 +1,17 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:portfolio_site/core/theme/app_theme.dart';
 
+/// A navigation item widget that displays an icon and an optional label.
+///
+/// [NavItem] can be used in navigation bars or menus to represent a selectable item.
+/// It highlights itself when selected and supports custom padding and tap callbacks.
+///
+/// - [icon]: The icon to display.
+/// - [label]: The text label to display (if [showLabel] is true).
+/// - [onTap]: Callback when the item is tapped.
+/// - [showLabel]: Whether to show the label next to the icon.
+/// - [verticalPad]: Vertical padding inside the button (default is 8.0).
+/// - [isSelected]: Whether the item is currently selected (affects styling).
 class NavItem extends StatelessWidget {
   final IconData icon;
   final String label;
